@@ -12,7 +12,7 @@ public class LineController : MonoBehaviour
     void Start()
     {
         line = gameObject.GetComponent<LineRenderer>();
-        ignoredLayers = 1 << LayerMask.NameToLayer("Projectile Player") & 1 << LayerMask.NameToLayer("Projectile Enemy");
+        ignoredLayers = ~((1 << LayerMask.NameToLayer("Projectile Player")) | (1 << LayerMask.NameToLayer("Projectile Enemy")));
     }
 
     private void Update()
@@ -24,10 +24,16 @@ public class LineController : MonoBehaviour
     {
         line.SetPosition(0, this.transform.position);
         raycastHits = Physics2D.RaycastAll(transform.position, transform.up, 10, ignoredLayers);
-        
+
+        line.positionCount = 2;
         if (raycastHits.Length > 1)
         {
             line.SetPosition(1, raycastHits[1].point);
+            if (raycastHits[1].transform.tag == "Mirror")
+            {
+                line.positionCount = 3;
+                line.SetPosition(2, Vector2.Reflect(transform.up * 10 + transform.position, raycastHits[1].normal));
+            }
         }
         else
         {
