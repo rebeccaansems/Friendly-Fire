@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2629874217478482486}
   - component: {fileID: 8749459054158828343}
   - component: {fileID: 7985391776885152437}
+  - component: {fileID: 631687603}
   m_Layer: 0
   m_Name: Enemy Line
   m_TagString: Untagged
@@ -139,6 +140,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &631687603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270615767672145507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd545929164ec847a0d0e8e5a1b8920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6252592841881991167, guid: 9fc48101bd1907249b3d5c3e9d1ecd23,
+    type: 3}
+  projectileSpeed: 5
 --- !u!1 &6597815826743190217
 GameObject:
   m_ObjectHideFlags: 0

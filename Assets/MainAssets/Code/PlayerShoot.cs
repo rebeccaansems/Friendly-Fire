@@ -18,7 +18,9 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+        GameController.instance.EnemiesShoot();
+
+        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation, transform);
         newProj.GetComponent<Rigidbody2D>().velocity = (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * projectileSpeed;
     }
 

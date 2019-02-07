@@ -32,11 +32,19 @@ public class GameController : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
-    public void RotateEnemies(float rotationAmount)
+    public void EnemiesRotate(float rotationAmount)
     {
-        foreach(GameObject enemy in enemies)
+        foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<EnemyMovement>().Rotate(rotationAmount);
+        }
+    }
+
+    public void EnemiesShoot()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponentInChildren<EnemyShoot>().Shoot();
         }
     }
 }

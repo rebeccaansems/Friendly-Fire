@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float rotationAmount = rotationGesture.RotationRadiansDelta * Mathf.Rad2Deg * rotateSpeed;
 
-            GameController.instance.RotateEnemies(rotationAmount);
+            GameController.instance.EnemiesRotate(rotationAmount);
             this.transform.Rotate(0.0f, 0.0f, rotationAmount);
         }
     }
