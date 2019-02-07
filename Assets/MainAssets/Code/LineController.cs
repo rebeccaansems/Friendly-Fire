@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRay : MonoBehaviour
+public class LineController : MonoBehaviour
 {
-    LineRenderer line;
+    private LineRenderer line;
 
     void Start()
     {
