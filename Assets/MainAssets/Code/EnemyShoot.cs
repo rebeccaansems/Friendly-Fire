@@ -9,7 +9,8 @@ public class EnemyShoot : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation, transform);
-        newProj.GetComponent<Rigidbody2D>().velocity = (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * projectileSpeed;
+        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation);
+        newProj.GetComponent<Rigidbody2D>().velocity =
+            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * newProj.GetComponent<ProjectileController>().speed;
     }
 }

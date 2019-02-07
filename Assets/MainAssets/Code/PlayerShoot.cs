@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject projectile;
-    public float projectileSpeed;
 
     private TapGestureRecognizer doubleTapGesture = new TapGestureRecognizer();
 
@@ -20,8 +19,9 @@ public class PlayerShoot : MonoBehaviour
     {
         GameController.instance.EnemiesShoot();
 
-        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation, transform);
-        newProj.GetComponent<Rigidbody2D>().velocity = (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * projectileSpeed;
+        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation);
+        newProj.GetComponent<Rigidbody2D>().velocity = 
+            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * newProj.GetComponent<ProjectileController>().speed;
     }
 
     private void DoubleTapGestureCallback(GestureRecognizer gesture)
