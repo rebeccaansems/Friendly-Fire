@@ -17,7 +17,7 @@ public class LineController : MonoBehaviour
 
     private void Update()
     {
-        DrawLine();
+        //DrawLine();
     }
 
     void DrawLine()
@@ -43,6 +43,8 @@ public class LineController : MonoBehaviour
 
     public Vector3 GetLineStopPosition()
     {
+        raycastHits = Physics2D.RaycastAll(transform.position, transform.up, 10, ignoredLayers);
+
         if (raycastHits.Length > 1)
         {
             return raycastHits[1].point;
