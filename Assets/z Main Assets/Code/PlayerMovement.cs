@@ -23,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (gesture.State == GestureRecognizerState.Executing)
         {
-            this.transform.Rotate(0.0f, 0.0f, rotationGesture.RotationRadiansDelta * Mathf.Rad2Deg * rotateSpeed);
+            float rotationAmount = rotationGesture.RotationRadiansDelta * Mathf.Rad2Deg * rotateSpeed;
+
+            GameController.instance.RotateEnemies(rotationAmount);
+            this.transform.Rotate(0.0f, 0.0f, rotationAmount);
         }
     }
 
