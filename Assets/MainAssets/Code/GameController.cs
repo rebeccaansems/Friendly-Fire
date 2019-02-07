@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject player;
 
     [HideInInspector]
-    public GameObject[] enemies;
+    public List<GameObject> enemyRoster;
 
     public static GameController instance;
 
@@ -29,12 +30,17 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+    }
+
+    public void RemoveFromEnemyRoster(GameObject enemy)
+    {
+        enemyRoster.Remove(enemy);
     }
 
     public void EnemiesRotate(float rotationAmount)
     {
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject enemy in enemyRoster)
         {
             enemy.GetComponent<EnemyMovement>().Rotate(rotationAmount);
         }
@@ -42,7 +48,7 @@ public class GameController : MonoBehaviour
 
     public void EnemiesShoot()
     {
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject enemy in enemyRoster)
         {
             enemy.GetComponentInChildren<EnemyShoot>().Shoot();
         }

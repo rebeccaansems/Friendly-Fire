@@ -10,7 +10,7 @@ public class ProjectileController : MonoBehaviour
     {
         Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider);
     }
-    
+
     private void OnBecameInvisible()
     {
         Die();
@@ -19,6 +19,14 @@ public class ProjectileController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Die();
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().Die();
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyController>().Die();
+        }
     }
 
     private void Die()
