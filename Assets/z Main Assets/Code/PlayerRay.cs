@@ -19,6 +19,17 @@ public class PlayerRay : MonoBehaviour
     void DrawLine()
     {
         line.SetPosition(0, this.transform.position);
-        line.SetPosition(1, transform.up * 10 + transform.position);
+
+        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, transform.up);
+        
+        if (hit.Length > 1)
+        {
+            line.SetPosition(1, hit[1].point);
+        }
+        else
+        {
+            line.SetPosition(1, transform.up * 10 + transform.position);
+        }
+
     }
 }
