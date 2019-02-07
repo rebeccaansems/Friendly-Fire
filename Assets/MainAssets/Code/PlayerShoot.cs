@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public GameObject projectile;
+    public float projectileSpeed;
+
     private TapGestureRecognizer doubleTapGesture = new TapGestureRecognizer();
 
     // Start is called before the first frame update
@@ -15,7 +18,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-
+        GameObject newProj = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+        newProj.GetComponent<Rigidbody2D>().velocity = (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * projectileSpeed;
     }
 
     private void DoubleTapGestureCallback(GestureRecognizer gesture)

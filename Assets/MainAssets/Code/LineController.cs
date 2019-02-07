@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LineController : MonoBehaviour
 {
+    public RaycastHit2D[] raycastHits;
+
     private LineRenderer line;
 
     void Start()
@@ -20,16 +22,24 @@ public class LineController : MonoBehaviour
     {
         line.SetPosition(0, this.transform.position);
 
-        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, transform.up);
+        raycastHits = Physics2D.RaycastAll(transform.position, transform.up, 10);
         
-        if (hit.Length > 1)
+        if (raycastHits.Length > 1)
         {
-            line.SetPosition(1, hit[1].point);
+            line.SetPosition(1, raycastHits[1].point);
         }
         else
         {
             line.SetPosition(1, transform.up * 10 + transform.position);
         }
+    }
 
+    public Vector3 GetLineStopPosition()
+    {
+        if (raycastHits.Length > 1)
+        {
+            return raycastHits[1].point;
+        }
+        return transform.up * 10 + transform.position;
     }
 }

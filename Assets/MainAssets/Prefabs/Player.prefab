@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 4498570973174378384}
   - component: {fileID: 2448324200161840646}
   - component: {fileID: 3031315483281412642}
+  - component: {fileID: 8894009392788821741}
   m_Layer: 0
   m_Name: Player Line
   m_TagString: Untagged
@@ -250,3 +251,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8894009392788821741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894009392788821740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1ec69730c122748be6ea2a31e714c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 998627025673477724, guid: 7e99c456ae967184388fd76936558c7f,
+    type: 3}
+  projectileSpeed: 5
