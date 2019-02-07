@@ -23,7 +23,6 @@ public class LineController : MonoBehaviour
     void DrawLine()
     {
         line.SetPosition(0, this.transform.position);
-
         raycastHits = Physics2D.RaycastAll(transform.position, transform.up, 10, ignoredLayers);
         
         if (raycastHits.Length > 1)
