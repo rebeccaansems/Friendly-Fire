@@ -6,6 +6,18 @@ public class ProjectileController : MonoBehaviour
 {
     public float speed;
 
+    private Vector3 originalPos;
+
+    private void Start()
+    {
+        originalPos = this.transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        transform.up = this.GetComponent<Rigidbody2D>().velocity;
+    }
+
     public void IgnoreCollider(Collider2D collider)
     {
         Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider);
@@ -18,7 +30,6 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Die();
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().Die();
@@ -26,6 +37,11 @@ public class ProjectileController : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyController>().Die();
+        }
+
+        if (collision.gameObject.tag != "Mirror")
+        {
+            Die();
         }
     }
 
