@@ -21,10 +21,10 @@ public class GestureControl : MonoBehaviour
 #else
             if (Input.touchCount > 0)
             {
-                rotX = (-1) * Input.touches[0].deltaPosition.x;
+                rotX = Input.touches[0].deltaPosition.x;
                 rotY = Input.touches[0].deltaPosition.y;
 
-                rotSpeed = rotSpeed / 4;
+                rotSpeed = rotSpeed / 8;
             }
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;
