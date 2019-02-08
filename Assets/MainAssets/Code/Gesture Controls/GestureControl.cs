@@ -6,12 +6,24 @@ public class GestureControl : MonoBehaviour
 {
     public float rotSpeed = 20;
 
-    void OnMouseDrag()
+    private void Update()
     {
         if (Time.timeScale != 0)
         {
-            float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-            float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+            float rotX = 0, rotY = 0;
+
+            if (Input.touchCount > 0)
+            {
+                rotX = Input.touches[0].deltaPosition.x;
+                rotY = Input.touches[0].deltaPosition.y;
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+                rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+            }
+            
             Vector3 playerPos = GameController.instance.player.transform.position;
 
             GameController.instance.player.transform.Rotate(Vector3.forward, -rotX);
