@@ -24,7 +24,7 @@ public class GestureControl : MonoBehaviour
                 rotX = Input.touches[0].deltaPosition.x;
                 rotY = Input.touches[0].deltaPosition.y;
 
-                rotSpeed = rotSpeed / 30;
+                rotSpeed = rotSpeed / 100;
             }
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;
