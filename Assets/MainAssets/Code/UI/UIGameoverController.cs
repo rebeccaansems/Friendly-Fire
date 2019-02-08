@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIGameoverController : UIController
 {
     [SerializeField]
     private TextMeshProUGUI mainText, headerText;
+
+    [SerializeField]
+    private Image[] starImages;
+
+    [SerializeField]
+    private Sprite emptyStar, filledStar;
 
     public static UIGameoverController instance;
 
@@ -28,16 +35,18 @@ public class UIGameoverController : UIController
         if (playerWon)
         {
             headerText.text = "LEVEL CLEAR";
+
+            DisplayStars();
         }
         else
         {
             headerText.text = "GAME OVER";
+
+            DisplayEmptyStars();
         }
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
-
-        DisplayStars();
 
         UITopBannerController.instance.Hide();
         Open(this.GetComponent<CanvasGroup>());
@@ -49,20 +58,33 @@ public class UIGameoverController : UIController
 
         if (GameController.instance.shotsFired <= starLevels[0])
         {
-            Debug.Log("3");
+            starImages[2].sprite = filledStar;
+            starImages[1].sprite = filledStar;
+            starImages[0].sprite = filledStar;
         }
         else if (IsBetween(GameController.instance.shotsFired, starLevels[0], starLevels[1]))
         {
-            Debug.Log("2");
+            starImages[2].sprite = emptyStar;
+            starImages[1].sprite = filledStar;
+            starImages[0].sprite = filledStar;
         }
         else if (IsBetween(GameController.instance.shotsFired, starLevels[1], starLevels[2]))
         {
-            Debug.Log("1");
+            starImages[2].sprite = emptyStar;
+            starImages[1].sprite = emptyStar;
+            starImages[0].sprite = filledStar;
         }
         else
         {
-            Debug.Log("0");
+            DisplayEmptyStars();
         }
+    }
+
+    private void DisplayEmptyStars()
+    {
+        starImages[2].sprite = emptyStar;
+        starImages[1].sprite = emptyStar;
+        starImages[0].sprite = emptyStar;
     }
 
     private bool IsBetween(int numberToCheck, int bottom, int top)

@@ -6,7 +6,7 @@ using UnityEngine;
 public class UITopBannerController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI shotsText = null, timeText = null;
+    private TextMeshProUGUI shotsText, timeText;
 
     public static UITopBannerController instance;
 
