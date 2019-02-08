@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIGameoverController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI mainText = null, headerText = null;
+    private TextMeshProUGUI mainText, headerText;
 
     public static UIGameoverController instance;
 
@@ -37,7 +37,36 @@ public class UIGameoverController : UIController
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
 
+        DisplayStars();
+
         UITopBannerController.instance.Hide();
         Open(this.GetComponent<CanvasGroup>());
+    }
+
+    private void DisplayStars()
+    {
+        int[] starLevels = GameController.instance.currentLevel.starLevels;
+
+        if (GameController.instance.shotsFired <= starLevels[0])
+        {
+            Debug.Log("3");
+        }
+        else if (IsBetween(GameController.instance.shotsFired, starLevels[0], starLevels[1]))
+        {
+            Debug.Log("2");
+        }
+        else if (IsBetween(GameController.instance.shotsFired, starLevels[1], starLevels[2]))
+        {
+            Debug.Log("1");
+        }
+        else
+        {
+            Debug.Log("0");
+        }
+    }
+
+    private bool IsBetween(int numberToCheck, int bottom, int top)
+    {
+        return (numberToCheck >= bottom && numberToCheck <= top);
     }
 }

@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 
     public int shotsFired, timeTaken;
 
+    public LevelInfo currentLevel;
+
     private bool gameOver;
 
 
@@ -27,6 +29,9 @@ public class GameController : MonoBehaviour
     private void Setup()
     {
         gameOver = false;
+
+        shotsFired = 0;
+        timeTaken = 0;
 
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();

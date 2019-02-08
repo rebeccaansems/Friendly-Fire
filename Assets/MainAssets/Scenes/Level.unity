@@ -151,6 +151,7 @@ MonoBehaviour:
   enemyRoster: []
   shotsFired: 0
   timeTaken: 0
+  currentLevel: {fileID: 11400000, guid: 826a0494c9454794d84fb8333e5a83d5, type: 2}
 --- !u!4 &169174315
 Transform:
   m_ObjectHideFlags: 0
