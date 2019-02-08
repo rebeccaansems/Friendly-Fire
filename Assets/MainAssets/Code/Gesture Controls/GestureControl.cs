@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GestureControl : MonoBehaviour
 {
-    public float rotSpeed = 20;
+    public float rotSpeed;
 
     private void Update()
     {
@@ -24,13 +24,13 @@ public class GestureControl : MonoBehaviour
                 rotX = Input.touches[0].deltaPosition.x;
                 rotY = Input.touches[0].deltaPosition.y;
 
-                rotSpeed = rotSpeed / 8;
+                rotSpeed = rotSpeed / 30;
             }
 #endif
+            Debug.Log(rotSpeed);
             Vector3 playerPos = GameController.instance.player.transform.position;
 
-            GameController.instance.player.transform.Rotate(Vector3.forward, -rotX);
-            GameController.instance.player.transform.Rotate(Vector3.forward, rotY);
+            GameController.instance.player.transform.Rotate(Vector3.forward, rotY - rotX);
 
             GameController.instance.EnemiesRotate(rotY - rotX);
         }
