@@ -6,15 +6,18 @@ using UnityEngine;
 public class UITopBannerController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI shotsText, timeText;
-    [SerializeField]
-    private CanvasGroup topBannerPanel;
+    private TextMeshProUGUI shotsText = null, timeText = null;
 
     public static UITopBannerController instance;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        Show();
     }
 
     private void Update()
@@ -26,6 +29,16 @@ public class UITopBannerController : UIController
     public void Hide()
     {
         Close(this.GetComponent<CanvasGroup>());
+    }
+
+    public void Show()
+    {
+        Open(this.GetComponent<CanvasGroup>());
+    }
+
+    public void PauseGame()
+    {
+        UIPauseController.instance.PauseGame();
     }
 
 }

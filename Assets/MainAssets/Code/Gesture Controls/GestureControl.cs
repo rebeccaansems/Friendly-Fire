@@ -8,13 +8,16 @@ public class GestureControl : MonoBehaviour
 
     void OnMouseDrag()
     {
-        float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
-        float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
-        Vector3 playerPos = GameController.instance.player.transform.position;
+        if (Time.timeScale != 0)
+        {
+            float rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+            float rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+            Vector3 playerPos = GameController.instance.player.transform.position;
 
-        GameController.instance.player.transform.Rotate(Vector3.forward, -rotX);
-        GameController.instance.player.transform.Rotate(Vector3.forward, rotY);
+            GameController.instance.player.transform.Rotate(Vector3.forward, -rotX);
+            GameController.instance.player.transform.Rotate(Vector3.forward, rotY);
 
-        GameController.instance.EnemiesRotate(rotY - rotX);
+            GameController.instance.EnemiesRotate(rotY - rotX);
+        }
     }
 }

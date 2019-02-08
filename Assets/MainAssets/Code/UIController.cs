@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    private CanvasGroup currentPanel;
+    private Stack<CanvasGroup> currentPanel;
 
     public void Open(CanvasGroup panel)
     {
-        if (panel != currentPanel)
+        if (currentPanel == null)
         {
-            CloseAll();
+            currentPanel = new Stack<CanvasGroup>();
+        }
 
-            currentPanel = panel;
+        if (currentPanel.Count == 0 || currentPanel.Peek() != panel)
+        {
+            currentPanel.Push(panel);
 
             panel.alpha = 1;
             panel.blocksRaycasts = true;
@@ -28,15 +31,12 @@ public class UIController : MonoBehaviour
         panel.alpha = 0;
         panel.blocksRaycasts = false;
         panel.interactable = false;
-    }
 
-    private void CloseAll()
-    {
-        foreach (CanvasGroup panel in GameObject.FindGameObjectsWithTag("UI Panel").Select(x => x.GetComponent<CanvasGroup>()))
+        if (currentPanel == null)
         {
-            Close(panel);
+            currentPanel = new Stack<CanvasGroup>();
         }
 
-        currentPanel = null;
+        currentPanel.Pop();
     }
 }

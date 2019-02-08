@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIGameoverController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI mainText, headerText;
+    private TextMeshProUGUI mainText = null, headerText = null;
 
     public static UIGameoverController instance;
 
