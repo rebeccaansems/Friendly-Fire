@@ -21,6 +21,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator GameOverScreen()
     {
         yield return new WaitForSeconds(1.5f);
-        UIGameoverController.instance.GameOver();
+        UIGameoverController.instance.GameOver(false);
     }
 }

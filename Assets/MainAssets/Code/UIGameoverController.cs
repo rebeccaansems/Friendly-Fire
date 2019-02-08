@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIGameoverController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI mainText;
+    private TextMeshProUGUI mainText, headerText;
 
     public static UIGameoverController instance;
 
@@ -21,9 +21,18 @@ public class UIGameoverController : UIController
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GameOver()
+    public void GameOver(bool playerWon)
     {
         Time.timeScale = 0;
+
+        if (playerWon)
+        {
+            headerText.text = "LEVEL CLEAR";
+        }
+        else
+        {
+            headerText.text = "GAME OVER";
+        }
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";

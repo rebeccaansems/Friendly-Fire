@@ -43,8 +43,9 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
-        if (enemyRoster.Count == 0)
+        if (enemyRoster.Count == 0 && gameOver == false)
         {
+            gameOver = true;
             StartCoroutine(WinLevel());
         }
     }
@@ -77,6 +78,6 @@ public class GameController : MonoBehaviour
     private IEnumerator WinLevel()
     {
         yield return new WaitForSeconds(1.5f);
-        UIGameoverController.instance.GameOver();
+        UIGameoverController.instance.GameOver(true);
     }
 }
