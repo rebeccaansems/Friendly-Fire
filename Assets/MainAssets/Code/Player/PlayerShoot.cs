@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
+        GameController.instance.shotsFired++;
         GameController.instance.EnemiesShoot();
 
         Vector3 startPos = transform.position + new Vector3(0, 0, 5);

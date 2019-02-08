@@ -1,22 +1,13 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    public CanvasGroup gameoverCanvas;
-    public List<CanvasGroup> allPanels;
-
     private CanvasGroup currentPanel;
-
-    public static UIController instance;
-
-    void Awake()
-    {
-        instance = this;
-        CloseAll();
-    }
 
     public void Open(CanvasGroup panel)
     {
@@ -41,16 +32,11 @@ public class UIController : MonoBehaviour
 
     private void CloseAll()
     {
-        foreach (CanvasGroup panel in allPanels)
+        foreach (CanvasGroup panel in GameObject.FindGameObjectsWithTag("UI Panel").Select(x => x.GetComponent<CanvasGroup>()))
         {
             Close(panel);
         }
 
         currentPanel = null;
-    }
-
-    public void ResetGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
