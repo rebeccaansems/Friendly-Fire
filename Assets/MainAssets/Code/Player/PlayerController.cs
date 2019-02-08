@@ -8,11 +8,19 @@ public class PlayerController : MonoBehaviour
     {
         this.GetComponent<Animator>().SetBool("isDead", true);
         StartCoroutine(DestroyOnAnimationFinish());
+
+        StartCoroutine(GameOverScreen());
     }
 
     private IEnumerator DestroyOnAnimationFinish()
     {
         yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator GameOverScreen()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UIController.instance.Open(UIController.instance.gameoverCanvas);
     }
 }
