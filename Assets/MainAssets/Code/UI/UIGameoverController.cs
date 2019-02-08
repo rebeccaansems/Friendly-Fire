@@ -16,6 +16,8 @@ public class UIGameoverController : UIController
     [SerializeField]
     private Sprite emptyStar, filledStar;
 
+    private int starLevel;
+
     public static UIGameoverController instance;
 
     private void Awake()
@@ -48,6 +50,9 @@ public class UIGameoverController : UIController
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
 
+        PlayerPrefs.SetInt("Level " + GameController.instance.currentLevel.levelNumber, 
+            Mathf.Max(starLevel, PlayerPrefs.GetInt("Level " + GameController.instance.currentLevel.levelNumber, 0)));
+
         UITopBannerController.instance.Hide();
         Open(this.GetComponent<CanvasGroup>());
     }
@@ -61,22 +66,30 @@ public class UIGameoverController : UIController
             starImages[2].sprite = filledStar;
             starImages[1].sprite = filledStar;
             starImages[0].sprite = filledStar;
+
+            starLevel = 3;
         }
         else if (IsBetween(GameController.instance.shotsFired, starLevels[0], starLevels[1]))
         {
             starImages[2].sprite = emptyStar;
             starImages[1].sprite = filledStar;
             starImages[0].sprite = filledStar;
+
+            starLevel = 2;
         }
         else if (IsBetween(GameController.instance.shotsFired, starLevels[1], starLevels[2]))
         {
             starImages[2].sprite = emptyStar;
             starImages[1].sprite = emptyStar;
             starImages[0].sprite = filledStar;
+
+            starLevel = 1;
         }
         else
         {
             DisplayEmptyStars();
+
+            starLevel = 0;
         }
     }
 

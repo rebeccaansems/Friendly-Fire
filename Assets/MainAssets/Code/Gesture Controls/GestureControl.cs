@@ -27,7 +27,6 @@ public class GestureControl : MonoBehaviour
                 rotSpeed = rotSpeed / 30;
             }
 #endif
-            Debug.Log(rotSpeed);
             Vector3 playerPos = GameController.instance.player.transform.position;
 
             GameController.instance.player.transform.Rotate(Vector3.forward, rotY - rotX);

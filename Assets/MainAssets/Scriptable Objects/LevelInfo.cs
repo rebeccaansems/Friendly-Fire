@@ -6,6 +6,8 @@ using UnityEngine;
 public class LevelInfo : ScriptableObject
 {
     public int worldNumber;
+
+    public int levelNumber;
     public string levelName;
 
     public int[] starLevels;
