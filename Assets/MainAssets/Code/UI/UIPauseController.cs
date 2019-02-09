@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class UIPauseController : UIController
 {
     [SerializeField]
+    private CanvasGroup[] contentPanels;
+
+    [SerializeField]
     private Slider senseSlider;
+
+    private int currentContentPanel;
 
     public static UIPauseController instance;
 
@@ -23,6 +28,7 @@ public class UIPauseController : UIController
         LoadSettings();
 
         Open(this.GetComponent<CanvasGroup>());
+        Open(contentPanels[currentContentPanel]);
         UITopBannerController.instance.Hide();
     }
 
@@ -56,12 +62,31 @@ public class UIPauseController : UIController
 
     private void LoadSettings()
     {
-        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 100);
+        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 50);
     }
 
     private void SaveSettings()
     {
         PlayerPrefs.SetFloat("RotSpeed", senseSlider.value);
         GameController.instance.rotSpeed = senseSlider.value;
+    }
+
+    public void Move(int direction)
+    {
+        currentContentPanel += direction;
+        if (currentContentPanel > contentPanels.Length - 1)
+        {
+            currentContentPanel = 0;
+        }
+        else if (currentContentPanel < 0)
+        {
+            currentContentPanel = contentPanels.Length - 1;
+        }
+
+        foreach (CanvasGroup panel in contentPanels)
+        {
+            CloseWithoutStack(panel);
+        }
+        OpenWithoutStack(contentPanels[currentContentPanel]);
     }
 }

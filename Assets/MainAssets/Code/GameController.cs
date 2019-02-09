@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();
 
-        rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 100);
+        rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 50);
 
         Time.timeScale = 1;
 

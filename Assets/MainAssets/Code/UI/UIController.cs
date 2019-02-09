@@ -26,6 +26,13 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void OpenWithoutStack(CanvasGroup panel)
+    {
+        panel.alpha = 1;
+        panel.blocksRaycasts = true;
+        panel.interactable = true;
+    }
+
     public void Close(CanvasGroup panel)
     {
         panel.alpha = 0;
@@ -38,5 +45,12 @@ public class UIController : MonoBehaviour
         }
 
         currentPanel.Pop();
+    }
+
+    public void CloseWithoutStack(CanvasGroup panel)
+    {
+        panel.alpha = 0;
+        panel.blocksRaycasts = false;
+        panel.interactable = false;
     }
 }
