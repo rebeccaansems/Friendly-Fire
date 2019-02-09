@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OverallController : MonoBehaviour
 {
-
     public bool invertY, invertX;
     public float volume;
 

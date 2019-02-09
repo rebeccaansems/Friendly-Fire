@@ -40,5 +40,4 @@ public class UITopBannerController : UIController
     {
         UIPauseController.instance.PauseGame();
     }
-
 }

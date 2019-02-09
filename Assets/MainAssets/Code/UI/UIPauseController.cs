@@ -63,6 +63,9 @@ public class UIPauseController : UIController
     private void SaveSettings()
     {
         PlayerPrefs.SetFloat("RotSpeed", senseSlider.value);
+        GameController.instance.rotSpeed = senseSlider.value;
+
         PlayerPrefs.SetFloat("Volume", volumeSlider.value);
+        //OverallController.instance.volume = volumeSlider.value;
     }
 }

@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public List<GameObject> enemyRoster;
 
     public int shotsFired, timeTaken;
+    public float rotSpeed;
 
     public LevelInfo currentLevel;
 
@@ -35,6 +36,8 @@ public class GameController : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+
+        rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 100);
 
         Time.timeScale = 1;
 

@@ -10,28 +10,32 @@ public class GestureControl : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
-            float rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 100);
+            float rotSpeed = GameController.instance.rotSpeed;
+            float localRotSpeed = rotSpeed;
+
             float rotX = 0, rotY = 0;
 
 #if UNITY_EDITOR
             if (Input.GetMouseButton(0))
             {
+                localRotSpeed *= 12;
+
                 if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(Input.mousePosition).y)
                 {
-                    rotX = -Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+                    rotX = -Input.GetAxis("Mouse X") * localRotSpeed * Mathf.Deg2Rad;
                 }
                 else
                 {
-                    rotX = Input.GetAxis("Mouse X") * rotSpeed * Mathf.Deg2Rad;
+                    rotX = Input.GetAxis("Mouse X") * localRotSpeed * Mathf.Deg2Rad;
                 }
 
                 if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
                 {
-                    rotY = -Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+                    rotY = -Input.GetAxis("Mouse Y") * localRotSpeed * Mathf.Deg2Rad;
                 }
                 else
                 {
-                    rotY = Input.GetAxis("Mouse Y") * rotSpeed * Mathf.Deg2Rad;
+                    rotY = Input.GetAxis("Mouse Y") * localRotSpeed * Mathf.Deg2Rad;
                 }
             }
 #else
@@ -39,20 +43,20 @@ public class GestureControl : MonoBehaviour
             {
                 if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).y)
                 {
-                    rotX = -Input.touches[0].deltaPosition.x * rotSpeed * Mathf.Deg2Rad;
+                    rotX = -Input.touches[0].deltaPosition.x * localRotSpeed * Mathf.Deg2Rad;
                 }
                 else
                 {
-                    rotX = Input.touches[0].deltaPosition.x * rotSpeed * Mathf.Deg2Rad;
+                    rotX = Input.touches[0].deltaPosition.x * localRotSpeed * Mathf.Deg2Rad;
                 }
 
                 if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x)
                 {
-                    rotY = -Input.touches[0].deltaPosition.y * rotSpeed * Mathf.Deg2Rad;
+                    rotY = -Input.touches[0].deltaPosition.y * localRotSpeed * Mathf.Deg2Rad;
                 }
                 else
                 {
-                    rotY = Input.touches[0].deltaPosition.y * rotSpeed * Mathf.Deg2Rad;
+                    rotY = Input.touches[0].deltaPosition.y * localRotSpeed * Mathf.Deg2Rad;
                 }
             }
 #endif
