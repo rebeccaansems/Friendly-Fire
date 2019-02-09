@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GestureControl : MonoBehaviour
 {
-    public float rotSpeed;
-
     private void Update()
     {
         if (Time.timeScale != 0)
         {
+            float rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 100);
             float rotX = 0, rotY = 0;
 
 #if UNITY_EDITOR
@@ -23,8 +22,6 @@ public class GestureControl : MonoBehaviour
             {
                 rotX = Input.touches[0].deltaPosition.x;
                 rotY = Input.touches[0].deltaPosition.y;
-
-                rotSpeed = rotSpeed / 100;
             }
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;

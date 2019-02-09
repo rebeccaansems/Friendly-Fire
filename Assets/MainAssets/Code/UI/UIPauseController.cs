@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIPauseController : UIController
 {
+    [SerializeField]
+    private Slider volumeSlider, senseSlider;
+
     public static UIPauseController instance;
 
     private void Awake()
@@ -16,6 +20,8 @@ public class UIPauseController : UIController
     {
         Time.timeScale = 0;
 
+        LoadSettings();
+
         Open(this.GetComponent<CanvasGroup>());
         UITopBannerController.instance.Hide();
     }
@@ -26,11 +32,15 @@ public class UIPauseController : UIController
 
         Close(this.GetComponent<CanvasGroup>());
         UITopBannerController.instance.Show();
+
+        SaveSettings();
     }
 
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        SaveSettings();
     }
 
     public void Tweet()
@@ -41,5 +51,18 @@ public class UIPauseController : UIController
     public void MainMenu()
     {
 
+        SaveSettings();
+    }
+
+    private void LoadSettings()
+    {
+        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 100);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+    }
+
+    private void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("RotSpeed", senseSlider.value);
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
     }
 }
