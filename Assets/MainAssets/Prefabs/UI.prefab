@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 5358707048122176402, guid: c2275e8ce9d60454b80fab221d43c990,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5358707048122176402, guid: c2275e8ce9d60454b80fab221d43c990,
         type: 3}
@@ -1155,11 +1155,6 @@ PrefabInstance:
       propertyPath: senseSlider
       value: 
       objectReference: {fileID: 4489650941418736007}
-    - target: {fileID: 4242186716787777187, guid: fd5b2ff07c915ab41b5d3ff3eceb42d1,
-        type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4242186716787777187, guid: fd5b2ff07c915ab41b5d3ff3eceb42d1,
         type: 3}
       propertyPath: m_Interactable
@@ -1591,7 +1586,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Touch Sense Panel
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7558982179928817908, guid: fd5b2ff07c915ab41b5d3ff3eceb42d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fd5b2ff07c915ab41b5d3ff3eceb42d1, type: 3}
 --- !u!114 &8084678090122817192 stripped
 MonoBehaviour:
