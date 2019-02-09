@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIPauseController : UIController
 {
     [SerializeField]
-    private Slider volumeSlider, senseSlider;
+    private Slider senseSlider;
 
     public static UIPauseController instance;
 
@@ -57,15 +57,11 @@ public class UIPauseController : UIController
     private void LoadSettings()
     {
         senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 100);
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
     }
 
     private void SaveSettings()
     {
         PlayerPrefs.SetFloat("RotSpeed", senseSlider.value);
         GameController.instance.rotSpeed = senseSlider.value;
-
-        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
-        //OverallController.instance.volume = volumeSlider.value;
     }
 }
