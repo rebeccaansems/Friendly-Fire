@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GestureControl : MonoBehaviour
 {
-    public int invertRotationX = 1, invertRotationY = 1;
 
     private void Update()
     {
         if (Time.timeScale != 0)
         {
-            float rotSpeed = GameController.instance.rotSpeed;
-            float localRotSpeed = rotSpeed;
+            int invertRotation = OverallController.instance.invertControls;
 
+            float rotSpeed = OverallController.instance.rotSpeed;
+            float localRotSpeed = rotSpeed;
             float rotX = 0, rotY = 0;
 
 #if UNITY_EDITOR
@@ -62,7 +62,7 @@ public class GestureControl : MonoBehaviour
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;
 
-            float rotation = (invertRotationY * rotY) - (invertRotationX * rotX);
+            float rotation = (invertRotation * rotY) - (invertRotation* rotX);
             GameController.instance.player.transform.Rotate(Vector3.forward, rotation);
 
             GameController.instance.EnemiesRotate(rotation);

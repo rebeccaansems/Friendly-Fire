@@ -12,6 +12,9 @@ public class UIPauseController : UIController
     [SerializeField]
     private Slider senseSlider;
 
+    [SerializeField]
+    private Toggle invertToggle;
+
     private int currentContentPanel;
 
     public static UIPauseController instance;
@@ -28,7 +31,7 @@ public class UIPauseController : UIController
         LoadSettings();
 
         Open(this.GetComponent<CanvasGroup>());
-        Open(contentPanels[currentContentPanel]);
+        OpenWithoutStack(contentPanels[currentContentPanel]);
         UITopBannerController.instance.Hide();
     }
 
@@ -68,7 +71,10 @@ public class UIPauseController : UIController
     private void SaveSettings()
     {
         PlayerPrefs.SetFloat("RotSpeed", senseSlider.value);
-        GameController.instance.rotSpeed = senseSlider.value;
+        OverallController.instance.rotSpeed = senseSlider.value;
+
+        PlayerPrefs.SetInt("InvertControls", invertToggle.isOn ? -1 : 1);
+        OverallController.instance.invertControls = invertToggle.isOn ? -1 : 1;
     }
 
     public void Move(int direction)
