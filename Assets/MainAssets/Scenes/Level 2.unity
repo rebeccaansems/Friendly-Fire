@@ -153,7 +153,7 @@ MonoBehaviour:
   shotsFired: 0
   timeTaken: 0
   projectileSpeed: 0
-  currentLevel: {fileID: 11400000, guid: 952eb937048f5d949adc1e476f090bdc, type: 2}
+  currentLevel: {fileID: 11400000, guid: 5b329e28a635b0246ae0b1acf8d34a33, type: 2}
   scrollingText: {fileID: 6205444596846895702}
 --- !u!4 &169174315
 Transform:
@@ -1667,11 +1667,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614661817659696100, guid: c9dc2367d4bda2548907284ab820616c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -7.500122
       objectReference: {fileID: 0}
     - target: {fileID: 5104731187248179414, guid: c9dc2367d4bda2548907284ab820616c,
         type: 3}

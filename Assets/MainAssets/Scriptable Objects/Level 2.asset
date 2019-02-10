@@ -15,5 +15,5 @@ MonoBehaviour:
   worldNumber: 0
   buildIndex: 1
   levelNumber: 2
-  levelName: Tutorial A
+  levelName: Tutorial B
   starLevels: 010000000200000003000000
