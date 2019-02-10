@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public List<GameObject> enemyRoster;
 
+    [HideInInspector]
+    public bool playersAreInteractable;
+
     public int shotsFired, timeTaken;
 
     public float projectileSpeed;
@@ -18,6 +21,9 @@ public class GameController : MonoBehaviour
     public LevelInfo currentLevel;
 
     private bool gameOver;
+    
+    [SerializeField]
+    private UIScrollingText scrollingText;
 
 
     public static GameController instance;
@@ -40,7 +46,17 @@ public class GameController : MonoBehaviour
 
         Time.timeScale = 1;
 
-        StartCoroutine(Timer());
+        if (OverallController.instance.showIntroLevelText)
+        {
+            StartCoroutine(ShowScrollingText());
+            scrollingText.GetComponent<Animator>().SetBool("showIntro", true);
+            OverallController.instance.showIntroLevelText = false;
+        }
+        else
+        {
+            playersAreInteractable = true;
+            StartCoroutine(Timer());
+        }
     }
 
     public void RemoveFromEnemyRoster(GameObject enemy)
@@ -86,5 +102,14 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         UIGameoverController.instance.GameOver(true);
+    }
+
+    private IEnumerator ShowScrollingText()
+    {
+        playersAreInteractable = false;
+        yield return new WaitForSeconds(0.45f * GameController.instance.currentLevel.levelName.ToString().Length);
+
+        playersAreInteractable = true;
+        StartCoroutine(Timer());
     }
 }
