@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraGyro : MonoBehaviour
 {
     void Update()
     {
         this.transform.Rotate(
-            -Input.gyro.rotationRateUnbiased.x * 0.05f, 
-            -Input.gyro.rotationRateUnbiased.y * 0.05f, 
-            -Input.gyro.rotationRateUnbiased.z * 0.05f);
+            -Input.gyro.rotationRate.x * 0.05f, 
+            -Input.gyro.rotationRate.y * 0.05f, 
+            -Input.gyro.rotationRate.z * 0.05f);
 
         transform.eulerAngles = new Vector3(
             Mathf.Clamp(transform.eulerAngles.x, -2, 2),
