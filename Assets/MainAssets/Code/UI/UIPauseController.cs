@@ -32,7 +32,6 @@ public class UIPauseController : UIController
 
         Open(this.GetComponent<CanvasGroup>());
         OpenWithoutStack(contentPanels[currentContentPanel]);
-        UITopBannerController.instance.Hide();
     }
 
     public void PlayGame()
@@ -40,7 +39,6 @@ public class UIPauseController : UIController
         Time.timeScale = 1;
 
         Close(this.GetComponent<CanvasGroup>());
-        UITopBannerController.instance.Show();
 
         SaveSettings();
     }

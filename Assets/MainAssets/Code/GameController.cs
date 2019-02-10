@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public List<GameObject> enemyRoster;
 
+    [HideInInspector]
+    public bool gameIsPlaying;
+
+    [HideInInspector]
     public int shotsFired, timeTaken;
 
     public float projectileSpeed;
@@ -37,6 +41,8 @@ public class GameController : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+
+        gameIsPlaying = true;
 
         Time.timeScale = 1;
 
@@ -84,6 +90,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WinLevel()
     {
+        gameIsPlaying = false;
         yield return new WaitForSeconds(1.5f);
         UIGameoverController.instance.GameOver(true);
     }

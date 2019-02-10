@@ -57,8 +57,7 @@ public class UIGameoverController : UIController
         
         PlayerPrefs.SetInt("Stars" + GameController.instance.currentLevel.buildIndex, 
             Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0)));
-
-        UITopBannerController.instance.Hide();
+        
         Open(this.GetComponent<CanvasGroup>());
     }
 

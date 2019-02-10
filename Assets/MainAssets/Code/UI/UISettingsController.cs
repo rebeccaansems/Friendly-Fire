@@ -27,16 +27,11 @@ public class UISettingsController : UIController
     public void Hide()
     {
         UITopBannerController.instance.Show();
-        UILevelSelect.instance.Show();
-
         Close(this.GetComponent<CanvasGroup>());
     }
 
     public void Show()
     {
-        UITopBannerController.instance.Hide();
-        UILevelSelect.instance.Hide();
-
         OpenWithoutStack(contentPanels[currentContentPanel]);
         Open(this.GetComponent<CanvasGroup>());
     }
