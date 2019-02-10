@@ -20,7 +20,10 @@ public class GestureControl : MonoBehaviour
             {
                 localRotSpeed *= 12;
 
-                if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(Input.mousePosition).y)
+                Vector3 mousePos = Input.mousePosition;
+                mousePos.z = 10;
+
+                if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(mousePos).y)
                 {
                     rotX = -Input.GetAxis("Mouse X") * localRotSpeed * Mathf.Deg2Rad;
                 }
@@ -29,7 +32,7 @@ public class GestureControl : MonoBehaviour
                     rotX = Input.GetAxis("Mouse X") * localRotSpeed * Mathf.Deg2Rad;
                 }
 
-                if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(Input.mousePosition).x)
+                if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(mousePos).x)
                 {
                     rotY = -Input.GetAxis("Mouse Y") * localRotSpeed * Mathf.Deg2Rad;
                 }
@@ -41,7 +44,10 @@ public class GestureControl : MonoBehaviour
 #else
             if (Input.touchCount > 0)
             {
-                if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).y)
+                Vector3 touchPos = Input.GetTouch(0).position;
+                touchPos.z = 10;
+
+                if (GameController.instance.player.transform.position.y > Camera.main.ScreenToWorldPoint(touchPos).y)
                 {
                     rotX = -Input.touches[0].deltaPosition.x * localRotSpeed * Mathf.Deg2Rad;
                 }
@@ -50,7 +56,7 @@ public class GestureControl : MonoBehaviour
                     rotX = Input.touches[0].deltaPosition.x * localRotSpeed * Mathf.Deg2Rad;
                 }
 
-                if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x)
+                if (GameController.instance.player.transform.position.x > Camera.main.ScreenToWorldPoint(touchPos).x)
                 {
                     rotY = -Input.touches[0].deltaPosition.y * localRotSpeed * Mathf.Deg2Rad;
                 }
