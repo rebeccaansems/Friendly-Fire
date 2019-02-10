@@ -3848,6 +3848,7 @@ MonoBehaviour:
   - {fileID: 6205444597140868961}
   emptyStar: {fileID: 21300000, guid: 79453fc7d39379b45b0b5bc5b046a74a, type: 3}
   filledStar: {fileID: 21300000, guid: f1b673d4bea16a14f92b7c5ea15c5b5a, type: 3}
+  nextLevelButton: {fileID: 6205444596802146199}
 --- !u!1 &6205444597340764048
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ public class UIGameoverController : UIController
     [SerializeField]
     private Sprite emptyStar, filledStar;
 
+    [SerializeField]
+    private Button nextLevelButton;
+
     private int starLevel;
 
     public static UIGameoverController instance;
@@ -60,12 +63,15 @@ public class UIGameoverController : UIController
         {
             headerText.text = "GAME OVER";
 
+            nextLevelButton.interactable = false;
             DisplayEmptyStars();
         }
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
         
+        nextLevelButton.interactable = starLevel > 0;
+
         PlayerPrefs.SetInt("Stars" + GameController.instance.currentLevel.buildIndex, 
             Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0)));
         
