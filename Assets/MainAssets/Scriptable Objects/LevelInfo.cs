@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelInfo : ScriptableObject
 {
     public int worldNumber;
+    public int buildIndex;
 
     public int levelNumber;
     public string levelName;

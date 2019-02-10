@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OverallController : MonoBehaviour
 {
+    public int buildIndexVariance;
+
     [HideInInspector]
     public int invertControls;
 

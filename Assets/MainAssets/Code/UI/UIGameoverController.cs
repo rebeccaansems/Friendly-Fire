@@ -50,8 +50,8 @@ public class UIGameoverController : UIController
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
 
-        PlayerPrefs.SetInt("Level " + GameController.instance.currentLevel.levelNumber, 
-            Mathf.Max(starLevel, PlayerPrefs.GetInt("Level " + GameController.instance.currentLevel.levelNumber, 0)));
+        PlayerPrefs.SetInt("Stars " + GameController.instance.currentLevel.buildIndex, 
+            Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars " + GameController.instance.currentLevel.buildIndex, 0)));
 
         UITopBannerController.instance.Hide();
         Open(this.GetComponent<CanvasGroup>());
