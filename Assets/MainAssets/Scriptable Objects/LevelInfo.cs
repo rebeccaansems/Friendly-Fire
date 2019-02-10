@@ -12,4 +12,9 @@ public class LevelInfo : ScriptableObject
     public string levelName;
 
     public int[] starLevels;
+
+    public void Update()
+    {
+        buildIndex = levelNumber - 1;
+    }
 }

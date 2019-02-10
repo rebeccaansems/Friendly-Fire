@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 12
   m_EditorClassIdentifier: 
   worldNumber: 0
-  buildIndex: 0
-  levelNumber: 0
+  buildIndex: 11
+  levelNumber: 12
   levelName: Tutorial A
   starLevels: 010000000200000003000000
