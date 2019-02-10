@@ -16,17 +16,14 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        if (GameController.instance.playersAreInteractable)
-        {
-            GameController.instance.shotsFired++;
-            GameController.instance.EnemiesShoot();
+        GameController.instance.shotsFired++;
+        GameController.instance.EnemiesShoot();
 
-            Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
+        Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
-            GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
-            newProj.GetComponent<Rigidbody2D>().velocity =
-                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
-        }
+        GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
+        newProj.GetComponent<Rigidbody2D>().velocity =
+            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
     }
 
     private void DoubleTapGestureCallback(GestureRecognizer gesture)

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Level", menuName = "Level Info", order = 2)]
 public class LevelInfo : ScriptableObject
 {
-    public int worldNumber;
+    public string worldName;
     public int buildIndex;
 
     public int levelNumber;

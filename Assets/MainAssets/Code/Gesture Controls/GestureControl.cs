@@ -7,7 +7,7 @@ public class GestureControl : MonoBehaviour
 
     private void Update()
     {
-        if (Time.timeScale != 0 && GameController.instance.playersAreInteractable)
+        if (Time.timeScale != 0)
         {
             int invertRotation = OverallController.instance.invertControls;
 

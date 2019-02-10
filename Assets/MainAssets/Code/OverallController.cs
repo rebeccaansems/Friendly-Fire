@@ -10,9 +10,6 @@ public class OverallController : MonoBehaviour
     public int invertControls;
 
     [HideInInspector]
-    public bool showIntroLevelText;
-
-    [HideInInspector]
     public float volume, rotSpeed;
 
     public static OverallController instance;
@@ -37,7 +34,5 @@ public class OverallController : MonoBehaviour
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 50);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
-
-        showIntroLevelText = true;
     }
 }

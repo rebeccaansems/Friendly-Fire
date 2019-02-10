@@ -6,7 +6,7 @@ using UnityEngine;
 public class UITopBannerController : UIController
 {
     [SerializeField]
-    private TextMeshProUGUI shotsText, timeText;
+    private TextMeshProUGUI shotsText, timeText, levelNameText;
 
     public static UITopBannerController instance;
 
@@ -24,6 +24,7 @@ public class UITopBannerController : UIController
     {
         shotsText.text = "Shots: " + GameController.instance.shotsFired.ToString("00");
         timeText.text = "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
+        levelNameText.text = GameController.instance.currentLevel.levelName;
     }
 
     public void Hide()
