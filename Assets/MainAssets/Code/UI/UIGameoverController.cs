@@ -30,6 +30,11 @@ public class UIGameoverController : UIController
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void GotoLevelSelect()
+    {
+        SceneManager.LoadScene("Level Select");
+    }
+
     public void GameOver(bool playerWon)
     {
         Time.timeScale = 0;
@@ -49,9 +54,9 @@ public class UIGameoverController : UIController
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
-
-        PlayerPrefs.SetInt("Stars " + GameController.instance.currentLevel.buildIndex, 
-            Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars " + GameController.instance.currentLevel.buildIndex, 0)));
+        
+        PlayerPrefs.SetInt("Stars" + GameController.instance.currentLevel.buildIndex, 
+            Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0)));
 
         UITopBannerController.instance.Hide();
         Open(this.GetComponent<CanvasGroup>());

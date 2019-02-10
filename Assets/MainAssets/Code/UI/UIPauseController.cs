@@ -57,8 +57,9 @@ public class UIPauseController : UIController
         Debug.Log("Tweet");
     }
 
-    public void MainMenu()
+    public void GotoLevelSelect()
     {
+        SceneManager.LoadScene("Level Select");
 
         SaveSettings();
     }
