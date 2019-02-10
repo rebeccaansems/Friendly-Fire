@@ -6,6 +6,14 @@ public class CameraGyro : MonoBehaviour
 {
     void Update()
     {
-        this.transform.Rotate(Mathf.Clamp(-Input.gyro.rotationRateUnbiased.x, -5, 5), Mathf.Clamp(-Input.gyro.rotationRateUnbiased.y, -5, 5), Mathf.Clamp(-Input.gyro.rotationRateUnbiased.z, -5, 5));
+        this.transform.Rotate(
+            -Input.gyro.rotationRateUnbiased.x, 
+            -Input.gyro.rotationRateUnbiased.y, 
+            -Input.gyro.rotationRateUnbiased.z);
+
+        transform.eulerAngles = new Vector3(
+            Mathf.Clamp(transform.eulerAngles.x, -2, 2),
+            Mathf.Clamp(transform.eulerAngles.y, -2, 2),
+            Mathf.Clamp(transform.eulerAngles.z, -2, 2));
     }
 }
