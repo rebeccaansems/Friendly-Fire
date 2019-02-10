@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8e7055ad1a81d48bd52495dd8ea571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalableObjects: {fileID: 0}
+  scalableObjects: {fileID: 1310037473}
 --- !u!81 &1952195246
 AudioListener:
   m_ObjectHideFlags: 0
