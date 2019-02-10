@@ -7,9 +7,9 @@ public class CameraGyro : MonoBehaviour
     void Update()
     {
         this.transform.Rotate(
-            -Input.gyro.rotationRateUnbiased.x, 
-            -Input.gyro.rotationRateUnbiased.y, 
-            -Input.gyro.rotationRateUnbiased.z);
+            -Input.gyro.rotationRateUnbiased.x * 0.05f, 
+            -Input.gyro.rotationRateUnbiased.y * 0.05f, 
+            -Input.gyro.rotationRateUnbiased.z * 0.05f);
 
         transform.eulerAngles = new Vector3(
             Mathf.Clamp(transform.eulerAngles.x, -2, 2),
