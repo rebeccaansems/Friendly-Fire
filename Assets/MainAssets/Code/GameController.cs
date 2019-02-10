@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 
     public int shotsFired, timeTaken;
 
+    public float projectileSpeed;
+
     public LevelInfo currentLevel;
 
     private bool gameOver;

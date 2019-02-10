@@ -5,15 +5,14 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
     public GameObject projectile;
-    public float projectileSpeed;
 
     public void Shoot()
     {
-        Vector3 startPos = transform.position + new Vector3(0, 0, 5);
+        Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
         GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
         newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
         newProj.GetComponent<Rigidbody2D>().velocity =
-            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * newProj.GetComponent<ProjectileController>().speed;
+            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    public float speed;
-
     private Vector3 originalPos;
 
     private void Start()
