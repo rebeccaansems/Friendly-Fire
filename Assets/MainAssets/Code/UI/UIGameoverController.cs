@@ -35,6 +35,17 @@ public class UIGameoverController : UIController
         SceneManager.LoadScene("Level Select");
     }
 
+    public void Tweet()
+    {
+        Debug.Log("Tweet");
+    }
+
+    public void GotoNextLevel()
+    {
+        OverallController.instance.currentLevel++;
+        SceneManager.LoadScene(OverallController.instance.currentLevel + OverallController.instance.buildIndexVariance);
+    }
+
     public void GameOver(bool playerWon)
     {
         Time.timeScale = 0;

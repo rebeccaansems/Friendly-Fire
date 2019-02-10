@@ -27,6 +27,7 @@ public class UILevelSelectLevelData : MonoBehaviour
 
     public void LoadLevel()
     {
+        OverallController.instance.currentLevel = levelToLoad.buildIndex;
         SceneManager.LoadScene(levelToLoad.buildIndex + OverallController.instance.buildIndexVariance);
     }
 

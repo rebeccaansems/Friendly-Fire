@@ -303,8 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6900634aab9b80b4eb37e43ee155527e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allLevels: []
   buildIndexVariance: 1
   invertControls: 0
+  currentLevel: 0
   volume: 0
   rotSpeed: 0
 --- !u!1001 &3978650785477439407

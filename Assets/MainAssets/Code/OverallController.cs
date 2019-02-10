@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class OverallController : MonoBehaviour
 {
+    public LevelInfo[] allLevels;
+
     public int buildIndexVariance;
 
     [HideInInspector]
-    public int invertControls;
+    public int invertControls, currentLevel;
 
     [HideInInspector]
     public float volume, rotSpeed;
