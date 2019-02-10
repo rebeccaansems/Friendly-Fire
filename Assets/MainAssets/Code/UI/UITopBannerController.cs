@@ -22,9 +22,12 @@ public class UITopBannerController : UIController
 
     private void Update()
     {
-        shotsText.text = "Shots: " + GameController.instance.shotsFired.ToString("00");
-        timeText.text = "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
-        levelNameText.text = GameController.instance.currentLevel.levelName;
+        if (shotsText != null)
+        {
+            shotsText.text = "Shots: " + GameController.instance.shotsFired.ToString("00");
+            timeText.text = "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
+            levelNameText.text = GameController.instance.currentLevel.levelName;
+        }
     }
 
     public void Hide()
@@ -39,6 +42,13 @@ public class UITopBannerController : UIController
 
     public void PauseGame()
     {
-        UIPauseController.instance.PauseGame();
+        if (shotsText != null)
+        {
+            UIPauseController.instance.PauseGame();
+        }
+        else
+        {
+            UISettingsController.instance.Show();
+        }
     }
 }
