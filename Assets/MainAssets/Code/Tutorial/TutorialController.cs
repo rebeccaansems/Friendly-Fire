@@ -78,6 +78,7 @@ public class TutorialController : MonoBehaviour
                 break;
             case 4:
                 currentCommander = 4;
+                currentResponse = 3;
 
                 if (tappingTutorialOn == 0)
                 {
@@ -87,7 +88,6 @@ public class TutorialController : MonoBehaviour
                 break;
             case 5:
                 currentCommander = 5;
-                currentResponse = 3;
 
                 Show(responsePanel);
                 Time.timeScale = 0;
