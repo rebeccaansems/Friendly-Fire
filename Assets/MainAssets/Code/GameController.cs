@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public int shotsFired, timeTaken;
 
+    [SerializeField]
+    private bool isTutorial;
+
     public float projectileSpeed;
 
     public LevelInfo currentLevel;
@@ -56,7 +59,7 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
-        if (enemyRoster.Count == 0 && gameOver == false)
+        if (enemyRoster.Count == 0 && gameOver == false && isTutorial == false)
         {
             gameOver = true;
             StartCoroutine(WinLevel());

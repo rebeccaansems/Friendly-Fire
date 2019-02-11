@@ -8,11 +8,14 @@ public class EnemyShoot : MonoBehaviour
 
     public void Shoot()
     {
-        Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
+        if (this.transform.parent.GetComponent<Renderer>().enabled == true)
+        {
+            Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
-        GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
-        newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
-        newProj.GetComponent<Rigidbody2D>().velocity =
-            (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
+            GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
+            newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
+            newProj.GetComponent<Rigidbody2D>().velocity =
+                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
+        }
     }
 }
