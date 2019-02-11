@@ -12,13 +12,19 @@ public class TutorialController : MonoBehaviour
     public TextMeshProUGUI[] responsesText;
     public TextMeshProUGUI commanderText;
 
+    public GameObject fingerCircle;
+
     private int currentCommander, currentResponse;
+
+    private bool rotationTutorialOn;
 
     private void Start()
     {
         currentTutorialStep = 0;
         currentCommander = 0;
         currentResponse = 0;
+
+        rotationTutorialOn = false;
     }
 
     public void NextStep()
@@ -51,6 +57,9 @@ public class TutorialController : MonoBehaviour
             case 3:
                 currentCommander = 3;
                 Hide(responsePanel);
+
+                ShowCircle();
+                rotationTutorialOn = true;
                 break;
             case 4:
                 currentCommander = 4;
@@ -71,6 +80,17 @@ public class TutorialController : MonoBehaviour
                 currentCommander = 8;
                 break;
         }
+
+        if (rotationTutorialOn)
+        {
+            CountRotation();
+            if (nrOfRotations > 0)
+            {
+                currentTutorialStep++;
+                rotationTutorialOn = false;
+                HideCircle();
+            }
+        }
     }
 
     private void Hide(CanvasGroup panel)
@@ -86,6 +106,48 @@ public class TutorialController : MonoBehaviour
         panel.blocksRaycasts = true;
         panel.interactable = true;
     }
+
+    #region shooting tutorial
+
+    #endregion
+
+    #region rotating tutorial
+    private float totalRotation = 0;
+    public int nrOfRotations
+    {
+        get
+        {
+            return Mathf.Abs(((int)totalRotation) / 360);
+        }
+    }
+
+    private Vector3 lastPoint;
+
+    private void ShowCircle()
+    {
+        fingerCircle.SetActive(true);
+        fingerCircle.GetComponent<Animator>().SetBool("isCircle", true);
+        GameController.instance.player.GetComponent<Animator>().SetBool("isCircling", true);
+    }
+
+    private void HideCircle()
+    {
+        fingerCircle.SetActive(false);
+    }
+
+    private void CountRotation()
+    {
+        Vector3 facing = GameController.instance.player.transform.TransformDirection(Vector3.up);
+        facing.z = 0;
+
+        float angle = Vector3.Angle(lastPoint, facing);
+        if (Vector3.Cross(lastPoint, facing).z < 0)
+            angle *= -1;
+
+        totalRotation += angle;
+        lastPoint = facing;
+    }
+    #endregion
 
     #region Text
 
