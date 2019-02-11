@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324879811}
+  - component: {fileID: 324879812}
   m_Layer: 0
-  m_Name: Controllers 1
+  m_Name: Tutorial Controllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +34,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324879812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324879810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6900634aab9b80b4eb37e43ee155527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allLevels: []
+  buildIndexVariance: 0
+  invertControls: 0
+  currentLevel: 0
+  volume: 0
+  rotSpeed: 0
 --- !u!1 &1312553172
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,8 +101,9 @@ MonoBehaviour:
   gameIsPlaying: 0
   shotsFired: 0
   timeTaken: 0
+  isTutorial: 1
   projectileSpeed: 0
-  currentLevel: {fileID: 11400000, guid: 952eb937048f5d949adc1e476f090bdc, type: 2}
+  currentLevel: {fileID: 11400000, guid: 87f90e4615020ed419285bfc194ca42f, type: 2}
 --- !u!114 &9145708279985519588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +117,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTutorialStep: 0
-  responsesText: []
+  commanderPanel: {fileID: 0}
+  responsePanel: {fileID: 0}
+  responsesText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   commanderText: {fileID: 0}
+  fingerCircle: {fileID: 0}
+  fingerTapping: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &1461445402
 GameObject:
   m_ObjectHideFlags: 0

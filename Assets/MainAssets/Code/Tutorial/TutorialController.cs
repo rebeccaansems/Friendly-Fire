@@ -12,11 +12,11 @@ public class TutorialController : MonoBehaviour
     public TextMeshProUGUI[] responsesText;
     public TextMeshProUGUI commanderText;
 
-    public GameObject fingerCircle;
+    public GameObject fingerCircle, fingerTapping, enemy;
 
     private int currentCommander, currentResponse;
 
-    private bool rotationTutorialOn;
+    private int rotationTutorialOn, tappingTutorialOn, enemyTutorialOn;
 
     private void Start()
     {
@@ -24,7 +24,9 @@ public class TutorialController : MonoBehaviour
         currentCommander = 0;
         currentResponse = 0;
 
-        rotationTutorialOn = false;
+        rotationTutorialOn = 0;
+        tappingTutorialOn = 0;
+        enemyTutorialOn = 0;
     }
 
     public void NextStep()
@@ -45,6 +47,8 @@ public class TutorialController : MonoBehaviour
             case 0:
                 currentCommander = 0;
                 currentResponse = 0;
+
+                Time.timeScale = 0;
                 break;
             case 1:
                 currentCommander = 1;
@@ -56,39 +60,95 @@ public class TutorialController : MonoBehaviour
                 break;
             case 3:
                 currentCommander = 3;
+
                 Hide(responsePanel);
 
-                ShowCircle();
-                rotationTutorialOn = true;
+                if (rotationTutorialOn == 0)
+                {
+                    Time.timeScale = 1;
+
+                    ShowCircle();
+                    rotationTutorialOn++;
+                }
                 break;
             case 4:
                 currentCommander = 4;
+
+                if (tappingTutorialOn == 0)
+                {
+                    ShowTapping();
+                    tappingTutorialOn++;
+                }
                 break;
             case 5:
-                Show(responsePanel);
                 currentCommander = 5;
                 currentResponse = 3;
+
+                Show(responsePanel);
+                Time.timeScale = 0;
                 break;
             case 6:
                 currentCommander = 6;
+
                 Hide(responsePanel);
+
+                if (enemyTutorialOn == 0)
+                {
+                    enemyTutorialOn++;
+                    ShowEnemy();
+                }
+                Time.timeScale = 1;
                 break;
             case 7:
                 currentCommander = 7;
+                currentResponse = 4;
+
+                Show(responsePanel);
+                Time.timeScale = 0;
                 break;
             case 8:
                 currentCommander = 8;
+                currentResponse = 5;
+                break;
+            case 9:
+                currentCommander = 9;
+                currentResponse = 6;
+                break;
+            case 10:
+                Hide(commanderPanel);
+                Hide(responsePanel);
+
+                UIGameoverController.instance.GameOver(true);
                 break;
         }
 
-        if (rotationTutorialOn)
+        if (rotationTutorialOn == 1)
         {
             CountRotation();
             if (nrOfRotations > 0)
             {
-                currentTutorialStep++;
-                rotationTutorialOn = false;
+                StartCoroutine(UpdateTutorialStep(0.5f));
+                rotationTutorialOn++;
                 HideCircle();
+            }
+        }
+
+        if (tappingTutorialOn == 1)
+        {
+            if (GameController.instance.shotsFired > 0)
+            {
+                StartCoroutine(UpdateTutorialStep(1.5f));
+                tappingTutorialOn++;
+                HideTapping();
+            }
+        }
+
+        if (enemyTutorialOn == 1)
+        {
+            if (enemy == null)
+            {
+                currentTutorialStep++;
+                enemyTutorialOn++;
             }
         }
     }
@@ -107,7 +167,34 @@ public class TutorialController : MonoBehaviour
         panel.interactable = true;
     }
 
+    #region enemy
+
+    void ShowEnemy()
+    {
+        if (enemy != null)
+        {
+            if (enemy.activeSelf == false)
+            {
+                GameController.instance.player.transform.position += new Vector3(1, 0.5f, 0);
+            }
+            enemy.SetActive(true);
+        }
+    }
+
+    #endregion
+
     #region shooting tutorial
+
+    private void ShowTapping()
+    {
+        fingerTapping.SetActive(true);
+        fingerTapping.GetComponent<Animator>().SetBool("isTap", true);
+    }
+
+    private void HideTapping()
+    {
+        fingerTapping.SetActive(false);
+    }
 
     #endregion
 
@@ -127,7 +214,6 @@ public class TutorialController : MonoBehaviour
     {
         fingerCircle.SetActive(true);
         fingerCircle.GetComponent<Animator>().SetBool("isCircle", true);
-        GameController.instance.player.GetComponent<Animator>().SetBool("isCircling", true);
     }
 
     private void HideCircle()
@@ -160,7 +246,9 @@ public class TutorialController : MonoBehaviour
         "Perfect, ok, can you still shoot?",
         "Ok wonderful. I'm getting a lot of local static can you see any other ships?",
         "I'm getting no life scans. It's an empty ship, can you dispose of it?",
-        "Oh no! They must have left their hive commands enabled. We're going to port you over to some locations, please dispose of any ships you see.",
+        "Did you see that? They left their hive commands enabled!",
+        "That means that whenever you move, they move, when you shoot, they shoot. You get the picture.",
+        "We're going to port you over to some locations, please dispose of any ships you see. Be safe."
     };
 
     private List<string[]> responseTexts = new List<string[]>
@@ -191,9 +279,36 @@ public class TutorialController : MonoBehaviour
             "Affirmative.",
             "Yes, are they hostile?",
             "Probably."
+        },
+
+        new string[]
+        {
+            "How will that affect me?",
+            "What does that mean?",
+            "Cool?"
+        },
+
+        new string[]
+        {
+            "Noted.",
+            "That doesn't sound good.",
+            "Less cool."
+        },
+
+        new string[]
+        {
+            "Mission accepted.",
+            "Wait, where am I going?",
+            "Peace."
         }
     };
 
     #endregion
+
+    IEnumerator UpdateTutorialStep(float waitTime)
+    {
+        yield return new WaitForSecondsRealtime(waitTime);
+        currentTutorialStep++;
+    }
 
 }
