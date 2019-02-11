@@ -129,6 +129,7 @@ public class TutorialController : MonoBehaviour
                 Hide(responsePanel);
 
                 UIGameoverController.instance.GameOver(true);
+                PlayerPrefs.SetInt("TutorialCompleted", 1);
                 break;
         }
 

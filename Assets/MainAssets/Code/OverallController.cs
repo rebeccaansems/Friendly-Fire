@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OverallController : MonoBehaviour
 {
     public LevelInfo[] allLevels;
+    public LevelInfo tutorialLevel;
 
     public int buildIndexVariance;
 
@@ -36,5 +38,10 @@ public class OverallController : MonoBehaviour
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 50);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
+
+        if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 0)
+        {
+            SceneManager.LoadScene(tutorialLevel.buildIndex + buildIndexVariance - 1);
+        }
     }
 }

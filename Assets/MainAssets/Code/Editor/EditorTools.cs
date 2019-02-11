@@ -21,9 +21,14 @@ public class EditorTools
     [MenuItem("Tools/Update Level Info")]
     private static void Update()
     {
-        foreach(LevelInfo level in GetAllInstances<LevelInfo>())
+        int num = 1;
+        foreach (LevelInfo level in GetAllInstances<LevelInfo>())
         {
-            level.Update();
+            if (level.name.Contains("Level "))
+            {
+                level.UpdateInfo(num);
+                num++;
+            }
         }
     }
 
