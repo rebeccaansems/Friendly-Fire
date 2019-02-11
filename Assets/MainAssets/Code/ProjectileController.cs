@@ -7,6 +7,9 @@ public class ProjectileController : MonoBehaviour
     [SerializeField]
     private ParticleSystem particles;
 
+    [SerializeField]
+    private Animator animator;
+
     private Vector3 originalPos;
 
     private void Start()
@@ -50,10 +53,15 @@ public class ProjectileController : MonoBehaviour
     {
         if (particles != null)
         {
+            animator.transform.parent = null;
+            animator.SetBool("isDead", true);
+            Destroy(animator, 1);
+
             particles.transform.parent = null;
             particles.Stop();
             Destroy(particles, 1);
         }
+
         Destroy(this.gameObject);
     }
 
