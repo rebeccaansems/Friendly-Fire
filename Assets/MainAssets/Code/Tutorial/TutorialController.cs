@@ -354,7 +354,7 @@ public class TutorialController : MonoBehaviour
         {
             "I'm ok, I think.",
             "What do you mean abandoned?",
-            "Everything is chilli dog."
+            "Everything is chilli dog time."
         },
 
         new string[]
