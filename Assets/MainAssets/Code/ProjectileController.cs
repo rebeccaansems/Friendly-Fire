@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [SerializeField]
+    private ParticleSystem particles;
+
     private Vector3 originalPos;
 
     private void Start()
@@ -45,6 +48,12 @@ public class ProjectileController : MonoBehaviour
 
     private void Die()
     {
+        if (particles != null)
+        {
+            particles.transform.parent = null;
+            particles.Stop();
+            Destroy(particles, 1);
+        }
         Destroy(this.gameObject);
     }
 
