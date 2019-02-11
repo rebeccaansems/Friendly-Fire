@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour
 {
@@ -53,10 +54,14 @@ public class TutorialController : MonoBehaviour
             case 1:
                 currentCommander = 1;
                 currentResponse = 1;
+
+                Time.timeScale = 0;
                 break;
             case 2:
                 currentCommander = 2;
                 currentResponse = 2;
+
+                Time.timeScale = 0;
                 break;
             case 3:
                 currentCommander = 3;
@@ -109,10 +114,14 @@ public class TutorialController : MonoBehaviour
             case 8:
                 currentCommander = 8;
                 currentResponse = 5;
+
+                Time.timeScale = 0;
                 break;
             case 9:
                 currentCommander = 9;
                 currentResponse = 6;
+
+                Time.timeScale = 0;
                 break;
             case 10:
                 Hide(commanderPanel);
@@ -127,7 +136,7 @@ public class TutorialController : MonoBehaviour
             CountRotation();
             if (nrOfRotations > 0)
             {
-                StartCoroutine(UpdateTutorialStep(0.5f));
+                StartCoroutine(UpdateTutorialStep(0.25f));
                 rotationTutorialOn++;
                 HideCircle();
             }
@@ -179,6 +188,11 @@ public class TutorialController : MonoBehaviour
             }
             enemy.SetActive(true);
         }
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene(0);
     }
 
     #endregion

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ca085967a3b16949b369057ff53ab1c, type: 3}
-  m_Name: Level
+  m_Name: Tutorial
   m_EditorClassIdentifier: 
-  worldNumber: 0
-  buildIndex: 0
+  worldName: 
+  buildIndex: 1
   levelNumber: 0
-  levelName: DO NOT USE
-  starLevels: 010000000200000003000000
+  levelName: Intro
+  starLevels: f4010000f4010000f4010000
