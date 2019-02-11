@@ -5,6 +5,10 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("0-Red, 1-White")]
+    private int color;
+
+    [SerializeField]
     private ParticleSystem particles;
 
     [SerializeField]
@@ -29,7 +33,7 @@ public class ProjectileController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Die();
+        Die(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,22 +49,23 @@ public class ProjectileController : MonoBehaviour
 
         if (collision.gameObject.tag != "Mirror")
         {
-            Die();
+            Die(true);
         }
     }
 
-    private void Die()
+    private void Die(bool onScreen)
     {
-        if (particles != null)
+        if (onScreen)
         {
             animator.transform.parent = null;
+            animator.SetInteger("color", color);
             animator.SetBool("isDead", true);
             Destroy(animator, 1);
-
-            particles.transform.parent = null;
-            particles.Stop();
-            Destroy(particles, 1);
         }
+
+        particles.transform.parent = null;
+        particles.Stop();
+        Destroy(particles, 1);
 
         Destroy(this.gameObject);
     }
