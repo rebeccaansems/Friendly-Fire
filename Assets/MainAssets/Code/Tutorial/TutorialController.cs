@@ -15,7 +15,7 @@ public class TutorialController : MonoBehaviour
 
     public GameObject fingerCircle, fingerTapping, enemy;
 
-    private int currentCommander, currentResponse;
+    private int currentCommander, currentResponse, responseChoice;
 
     private int rotationTutorialOn, tappingTutorialOn, enemyTutorialOn;
 
@@ -30,14 +30,15 @@ public class TutorialController : MonoBehaviour
         enemyTutorialOn = 0;
     }
 
-    public void NextStep()
+    public void NextStep(int choice)
     {
+        responseChoice = choice;
         currentTutorialStep++;
     }
 
     public void Update()
     {
-        commanderText.text = commanderTexts[currentCommander];
+        commanderText.text = commanderResponseTexts[currentCommander][responseChoice] + "" + commanderTexts[currentCommander];
         for (int i = 0; i < responsesText.Length; i++)
         {
             responsesText[i].text = responseTexts[currentResponse][i];
@@ -254,15 +255,88 @@ public class TutorialController : MonoBehaviour
     private string[] commanderTexts = new string[]
     {
         "Captain Webb? Captain Webb? Please acknowledge if you're receiving this.",
-        "Oh thank god. All of the other hive ships have been abandoned! Are you ok?",
-        "Wonderful! I'm getting some diagnostics that say your flight movement system is down, is everything else fine?",
-        "Ok, ok, we'll run a quick diagnostic. Uhm, first, can you still rotate fine?",
-        "Perfect, ok, can you still shoot?",
-        "Ok wonderful. I'm getting a lot of local static can you see any other ships?",
+        "ll of the other hive ships have been abandoned! Are you ok?",
+        "I'm getting some diagnostics that say your flight movement system is down, is everything else fine?",
+        "we'll run a quick diagnostic. Uhm, first, can you still rotate fine?",
+        "Perfect, can you still shoot?",
+        "Great. I'm getting a lot of local static can you see any other ships?",
         "I'm getting no life scans. It's an empty ship, can you dispose of it?",
         "Did you see that? They left their hive commands enabled!",
         "That means that whenever you move, they move, when you shoot, they shoot. You get the picture.",
         "We're going to port you over to some locations, please dispose of any ships you see. Be safe."
+    };
+
+    private List<string[]> commanderResponseTexts = new List<string[]>
+    {
+        new string[]
+        {
+            "",
+            "",
+            ""
+        },
+
+        new string[]
+        {
+            "Oh thank god. A",
+            "Commander Scott. A",
+            "Uh, ok, Captain Webb a"
+        },
+
+        new string[]
+        {
+            "Wonderful! ",
+            "The definition of the word Captain. ",
+            "Are you sure you're ok? "
+        },
+
+        new string[]
+        {
+            "Ok ",
+            "You can't fly, ",
+            "No? Uhm, "
+        },
+
+        new string[]
+        {
+            "",
+            "",
+            ""
+        },
+
+        new string[]
+        {
+            "",
+            "",
+            ""
+        },
+
+        new string[]
+        {
+            "",
+            "No, ",
+            "That's not an answer. I see the ship and "
+        },
+
+        new string[]
+        {
+            "",
+            "",
+            ""
+        },
+
+        new string[]
+        {
+            "",
+            "",
+            "Not cool. "
+        },
+
+        new string[]
+        {
+            "",
+            "It's not. ",
+            ""
+        }
     };
 
     private List<string[]> responseTexts = new List<string[]>
