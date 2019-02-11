@@ -11,7 +11,7 @@ public class CameraScaler : MonoBehaviour
         if (AspectRatio() < 0.6f)
         {
             scalableObjects.transform.position = new Vector3(scalableObjects.transform.position.x, scalableObjects.transform.position.y, (0.004f * Screen.width) - 4.5f);
-            GameController.instance.projectileSpeed = (-0.09f * Screen.width) + 110;
+            GameController.instance.projectileSpeed = (-0.2f * Screen.width) + 155;
         }
     }
 
