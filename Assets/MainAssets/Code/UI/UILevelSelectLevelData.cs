@@ -17,12 +17,27 @@ public class UILevelSelectLevelData : MonoBehaviour
     private Image[] starImages;
 
     [SerializeField]
+    private Image lockedImage;
+
+    [SerializeField]
     private Sprite emptyStar, filledStar;
 
     public void Start()
     {
         levelNumber.text = levelToLoad.levelNumber.ToString("00");
         DisplayStars();
+
+        if (PlayerPrefs.GetInt("Stars" + (levelToLoad.buildIndex - 1), 0) == 0 && levelToLoad.buildIndex > 0)
+        {
+            LockLevel();
+        }
+    }
+
+    private void LockLevel()
+    {
+        this.GetComponentInChildren<TextMeshProUGUI>().alpha = 0.5f;
+        this.GetComponent<Button>().enabled = false;
+        lockedImage.enabled = true;
     }
 
     public void LoadLevel()
