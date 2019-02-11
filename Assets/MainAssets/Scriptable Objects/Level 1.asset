@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca085967a3b16949b369057ff53ab1c, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  worldName: Tutorial
+  worldName: Basic
   buildIndex: 1
   levelNumber: 1
   levelName: Tutorial A

@@ -59,6 +59,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f9812019189164448ff3a824accc071, type: 2}
   - {fileID: 11400000, guid: 8a323583c6967334ea689b190fec7728, type: 2}
   - {fileID: 11400000, guid: ce337e9e9da056c4e8cbf35696c5f5dc, type: 2}
+  - {fileID: 11400000, guid: 64c43f3ebc99cdb4c971f9bf6797ad5b, type: 2}
+  - {fileID: 11400000, guid: 86e85ec56c8f44e4e8695df8b5c09c09, type: 2}
+  - {fileID: 11400000, guid: 8d9aea8b6acd1694bba80dbdeec4a26f, type: 2}
+  - {fileID: 11400000, guid: 680d252d324ccef43adea0f5c859c5b6, type: 2}
+  - {fileID: 11400000, guid: 8c478b590f8c8c945b26892c5991a169, type: 2}
+  - {fileID: 11400000, guid: 576778000fcd83e42b5d1ccce22a04d6, type: 2}
+  - {fileID: 11400000, guid: e713c790c22a6584abfe3cf08032af50, type: 2}
+  - {fileID: 11400000, guid: bb51bcd821c1e7a4e9d364b17cb6e620, type: 2}
+  - {fileID: 11400000, guid: 3b57c28b2a514304e9c4ffc2ed4eaf40, type: 2}
   tutorialLevel: {fileID: 11400000, guid: 87f90e4615020ed419285bfc194ca42f, type: 2}
   buildIndexVariance: 2
   invertControls: 0
