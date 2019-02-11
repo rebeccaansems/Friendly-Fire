@@ -8,11 +8,8 @@ public class CameraScaler : MonoBehaviour
 
     void Start()
     {
-        if (AspectRatio() < 0.6f)
-        {
-            scalableObjects.transform.position = new Vector3(scalableObjects.transform.position.x, scalableObjects.transform.position.y, (0.004f * Screen.width) - 4.5f);
-            GameController.instance.projectileSpeed = (-0.2f * Screen.width) + 160;
-        }
+            float scale = (1.96933f * AspectRatio()) - 0.109479f;
+            scalableObjects.transform.localScale = new Vector3(scale, scale, 1);
     }
 
     private float AspectRatio()
