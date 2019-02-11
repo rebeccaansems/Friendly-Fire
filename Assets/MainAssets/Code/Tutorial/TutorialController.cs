@@ -183,11 +183,12 @@ public class TutorialController : MonoBehaviour
     {
         if (enemy != null)
         {
-            if (enemy.activeSelf == false)
+            if (enemy.GetComponent<SpriteRenderer>().enabled == false)
             {
                 GameController.instance.player.transform.position += new Vector3(1, 0.5f, 0);
             }
-            enemy.SetActive(true);
+            enemy.GetComponent<SpriteRenderer>().enabled = true;
+            enemy.GetComponent<Collider2D>().enabled = true;
         }
     }
 
