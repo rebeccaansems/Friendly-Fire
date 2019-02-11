@@ -24,8 +24,16 @@ public class PlayerShoot : MonoBehaviour
             Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
             GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
-            newProj.GetComponent<Rigidbody2D>().velocity =
-                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
+            if (GameController.instance.isTutorial)
+            {
+                newProj.GetComponent<Rigidbody2D>().velocity =
+                    (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * (GameController.instance.projectileSpeed / 3);
+            }
+            else
+            {
+                newProj.GetComponent<Rigidbody2D>().velocity =
+                    (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
+            }
         }
     }
 

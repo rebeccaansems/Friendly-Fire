@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public int shotsFired, timeTaken;
 
     [SerializeField]
-    private bool isTutorial;
+    public bool isTutorial;
 
     public float projectileSpeed;
 

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         
         particles.transform.parent = null;
         particles.Stop();
-        Destroy(particles, 1);
+        Destroy(particles.gameObject, 1);
         
         StartCoroutine(GameOverScreen());
     }

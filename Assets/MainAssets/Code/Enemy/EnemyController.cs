@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     {
         particles.transform.parent = null;
         particles.Stop();
-        Destroy(particles, 1);
+        Destroy(particles.gameObject, 1);
 
         GameController.instance.RemoveFromEnemyRoster(this.gameObject);
         this.GetComponent<Animator>().SetBool("isDead", true);

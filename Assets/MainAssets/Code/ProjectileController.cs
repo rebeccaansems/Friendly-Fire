@@ -9,7 +9,7 @@ public class ProjectileController : MonoBehaviour
     private int color;
 
     [SerializeField]
-    private ParticleSystem particles;
+    private ProjectileEffects particles;
 
     [SerializeField]
     private Animator animator;
@@ -63,9 +63,7 @@ public class ProjectileController : MonoBehaviour
             Destroy(animator, 1);
         }
 
-        particles.transform.parent = null;
-        particles.Stop();
-        Destroy(particles, 1);
+        particles.Die();
 
         Destroy(this.gameObject);
     }
