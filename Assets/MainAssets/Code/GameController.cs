@@ -19,8 +19,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     public bool isTutorial;
-
-    public float projectileSpeed;
+    
+    public int projSpeed;
 
     public LevelInfo currentLevel;
 

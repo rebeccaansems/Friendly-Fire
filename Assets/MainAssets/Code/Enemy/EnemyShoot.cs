@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
 
             newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
             newProj.GetComponent<Rigidbody2D>().velocity =
-                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
+                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projSpeed;
         }
     }
 }

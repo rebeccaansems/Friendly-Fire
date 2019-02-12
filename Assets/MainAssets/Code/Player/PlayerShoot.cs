@@ -26,16 +26,8 @@ public class PlayerShoot : MonoBehaviour
             GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
             GameController.instance.player.GetComponent<PlayerController>().ShootEffectPlay();
 
-            if (GameController.instance.isTutorial)
-            {
-                newProj.GetComponent<Rigidbody2D>().velocity =
-                    (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * (GameController.instance.projectileSpeed / 3);
-            }
-            else
-            {
-                newProj.GetComponent<Rigidbody2D>().velocity =
-                    (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;
-            }
+            newProj.GetComponent<Rigidbody2D>().velocity =
+                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projSpeed;
         }
     }
 

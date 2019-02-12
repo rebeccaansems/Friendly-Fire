@@ -45,10 +45,10 @@ public class LineController : MonoBehaviour
     {
         raycastHits = Physics2D.RaycastAll(transform.position, transform.up, 10, ignoredLayers);
 
-        if (raycastHits.Length > 1)
-        {
-            return raycastHits[1].point;
-        }
-        return transform.up * 10 + transform.position;
+        //if (raycastHits.Length > 1)
+        //{
+        //    return raycastHits[1].point;
+        //}
+        return new Vector2((transform.up + transform.position).x, (transform.up + transform.position).y);
     }
 }
