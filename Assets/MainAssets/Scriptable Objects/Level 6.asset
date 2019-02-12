@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Basic
   buildIndex: 6
   levelNumber: 6
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Red Rover
+  starLevels: 020000000300000004000000
