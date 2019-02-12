@@ -158,7 +158,7 @@ public class TutorialController : MonoBehaviour
         {
             if (enemy == null)
             {
-                currentTutorialStep++;
+                StartCoroutine(UpdateTutorialStep(0.5f));
                 enemyTutorialOn++;
             }
         }
@@ -189,7 +189,8 @@ public class TutorialController : MonoBehaviour
                 GameController.instance.player.transform.position += new Vector3(1, 0.5f, 0);
             }
             enemy.GetComponent<SpriteRenderer>().enabled = true;
-            enemy.GetComponent<Collider2D>().enabled = true;
+            enemy.transform.parent.GetComponent<SpriteRenderer>().enabled = true;
+            enemy.transform.parent.GetComponent<Collider2D>().enabled = true;
         }
     }
 

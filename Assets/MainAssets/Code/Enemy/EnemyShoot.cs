@@ -13,6 +13,9 @@ public class EnemyShoot : MonoBehaviour
             Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
             GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
+
+            this.transform.parent.GetComponent<EnemyController>().ShootEffectPlay();
+
             newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
             newProj.GetComponent<Rigidbody2D>().velocity =
                 (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projectileSpeed;

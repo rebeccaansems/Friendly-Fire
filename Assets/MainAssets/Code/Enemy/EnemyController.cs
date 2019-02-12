@@ -7,6 +7,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private ParticleSystem particles, bursts;
 
+    [SerializeField]
+    private SpriteRenderer shipImage;
+
     public void Start()
     {
         if (particles != null)
@@ -27,15 +30,27 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        shipImage.enabled = false;
+
         if (particles != null)
         {
             particles.transform.parent = null;
             particles.Stop();
-            Destroy(particles.gameObject, 1);
+            Destroy(particles.gameObject, 2);
         }
 
         GameController.instance.RemoveFromEnemyRoster(this.gameObject);
         this.GetComponent<Animator>().SetBool("isDead", true);
-        Destroy(this.gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        Destroy(this.gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length * 2);
+    }
+
+    public void ShootEffectPlay()
+    {
+        this.GetComponent<Animator>().SetBool("isShooting", true);
+    }
+
+    public void ShootEffectStop()
+    {
+        this.GetComponent<Animator>().SetBool("isShooting", false);
     }
 }

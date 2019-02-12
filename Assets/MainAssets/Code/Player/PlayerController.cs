@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ParticleSystem particles, bursts;
 
+    [SerializeField]
+    private SpriteRenderer shipImage;
+
     public void Start()
     {
         if (particles != null)
@@ -25,8 +28,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ShootEffectPlay()
+    {
+        this.GetComponent<Animator>().SetBool("isShooting", true);
+    }
+
+    public void ShootEffectStop()
+    {
+        this.GetComponent<Animator>().SetBool("isShooting", false);
+    }
+    
     public void Die()
     {
+        shipImage.enabled = false;
+
         this.GetComponent<Animator>().SetBool("isDead", true);
         GameController.instance.gameIsPlaying = false;
 
