@@ -83,7 +83,7 @@ MonoBehaviour:
   shotsFired: 0
   timeTaken: 0
   isTutorial: 1
-  projSpeed: 30
+  projSpeed: 25
   currentLevel: {fileID: 11400000, guid: 87f90e4615020ed419285bfc194ca42f, type: 2}
 --- !u!114 &9145708279985519588
 MonoBehaviour:
