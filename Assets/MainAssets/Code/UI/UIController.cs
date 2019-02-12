@@ -24,6 +24,11 @@ public class UIController : MonoBehaviour
             panel.blocksRaycasts = true;
             panel.interactable = true;
         }
+
+        if (this.GetComponent<Animator>() != null)
+        {
+            this.GetComponent<Animator>().SetBool("animIn", true);
+        }
     }
 
     public void OpenWithoutStack(CanvasGroup panel)
@@ -42,6 +47,11 @@ public class UIController : MonoBehaviour
         if (currentPanel == null)
         {
             currentPanel = new Stack<CanvasGroup>();
+        }
+
+        if (this.GetComponent<Animator>() != null)
+        {
+            this.GetComponent<Animator>().SetBool("animIn", false);
         }
 
         currentPanel.Pop();
