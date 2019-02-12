@@ -5,20 +5,34 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]
-    private ParticleSystem particles;
+    private ParticleSystem particles, bursts;
 
     public void Start()
     {
-        var emit = particles.emission;
-        emit.SetBurst(0, new ParticleSystem.Burst(Random.Range(0.1f, 1.0f), 500));
+        if (particles != null)
+        {
+            var emit = particles.emission;
+            emit.SetBurst(0, new ParticleSystem.Burst(Random.Range(0.1f, 1.0f), 500));
+        }
     }
 
+    public void Burst()
+    {
+        if (particles != null)
+        {
+            bursts.Stop();
+            bursts.Play();
+        }
+    }
 
     public void Die()
     {
-        particles.transform.parent = null;
-        particles.Stop();
-        Destroy(particles.gameObject, 1);
+        if (particles != null)
+        {
+            particles.transform.parent = null;
+            particles.Stop();
+            Destroy(particles.gameObject, 1);
+        }
 
         GameController.instance.RemoveFromEnemyRoster(this.gameObject);
         this.GetComponent<Animator>().SetBool("isDead", true);

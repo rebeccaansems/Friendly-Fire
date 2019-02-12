@@ -5,23 +5,38 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private ParticleSystem particles;
+    private ParticleSystem particles, bursts;
 
     public void Start()
     {
-        var emit = particles.emission;
-        emit.SetBurst(0, new ParticleSystem.Burst(Random.Range(0.1f, 1.0f), 500));
+        if (particles != null)
+        {
+            var emit = particles.emission;
+            emit.SetBurst(0, new ParticleSystem.Burst(Random.Range(0.1f, 1.0f), 500));
+        }
+    }
+
+    public void Burst()
+    {
+        if (particles != null)
+        {
+            bursts.Stop();
+            bursts.Play();
+        }
     }
 
     public void Die()
     {
         this.GetComponent<Animator>().SetBool("isDead", true);
         GameController.instance.gameIsPlaying = false;
-        
-        particles.transform.parent = null;
-        particles.Stop();
-        Destroy(particles.gameObject, 1);
-        
+
+        if (particles != null)
+        {
+            particles.transform.parent = null;
+            particles.Stop(true);
+            Destroy(particles.gameObject, 1);
+        }
+
         StartCoroutine(GameOverScreen());
     }
 

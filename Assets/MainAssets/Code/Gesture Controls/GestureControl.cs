@@ -67,8 +67,13 @@ public class GestureControl : MonoBehaviour
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;
 
-            float rotation = (invertRotation * rotY) - (invertRotation* rotX);
+            float rotation = (invertRotation * rotY) - (invertRotation * rotX);
             GameController.instance.player.transform.Rotate(Vector3.forward, rotation);
+            
+            if (rotation != 0)
+            {
+                GameController.instance.player.GetComponent<PlayerController>().Burst();
+            }
 
             GameController.instance.EnemiesRotate(rotation);
         }

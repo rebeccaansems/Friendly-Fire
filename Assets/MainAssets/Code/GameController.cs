@@ -68,9 +68,13 @@ public class GameController : MonoBehaviour
 
     public void EnemiesRotate(float rotationAmount)
     {
-        foreach (GameObject enemy in enemyRoster)
+        if (rotationAmount != 0)
         {
-            enemy.GetComponent<EnemyMovement>().Rotate(rotationAmount);
+            foreach (GameObject enemy in enemyRoster)
+            {
+                enemy.GetComponent<EnemyMovement>().Rotate(rotationAmount);
+                enemy.GetComponent<EnemyController>().Burst();
+            }
         }
     }
 

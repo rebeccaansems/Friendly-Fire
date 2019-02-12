@@ -8,8 +8,8 @@ public class CameraScaler : MonoBehaviour
 
     void Start()
     {
-            float scale = (1.96933f * AspectRatio()) - 0.109479f;
-            scalableObjects.transform.localScale = new Vector3(scale, scale, 1);
+        float scale = (1.96933f * AspectRatio()) - 0.109479f;
+        scalableObjects.transform.localScale = new Vector3(scale, scale, 1);
     }
 
     private float AspectRatio()
