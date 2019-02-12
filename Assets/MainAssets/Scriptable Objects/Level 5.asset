@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Basic
   buildIndex: 5
   levelNumber: 5
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Pentagon
+  starLevels: 010000000200000004000000
