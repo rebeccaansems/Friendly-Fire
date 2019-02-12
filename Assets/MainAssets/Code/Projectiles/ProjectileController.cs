@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
-{
-    [SerializeField]
-    [Tooltip("0-Red, 1-White")]
-    private int color;
-
-    [SerializeField]
+{[SerializeField]
     private ProjectileEffects particles;
 
     [SerializeField]
@@ -58,7 +53,6 @@ public class ProjectileController : MonoBehaviour
         if (onScreen)
         {
             animator.transform.parent = null;
-            animator.SetInteger("color", color);
             animator.SetBool("isDead", true);
             Destroy(animator, 1);
         }

@@ -42,7 +42,7 @@ Animator:
   m_GameObject: {fileID: 658759257438193930}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0765222385e10a84890e7d9024a0e32a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 2ae0160433507654187945ce5b7020e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 2979587742501025090}
   - component: {fileID: 6805349043624804848}
   m_Layer: 9
-  m_Name: Projectile Enemy
+  m_Name: Projectile Enemy A
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce01ec58bccc7148a8f389aff0b7101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 1
   particles: {fileID: 1337434882906930541}
   animator: {fileID: 8353099835888806309}
 --- !u!58 &6805349043624804848
