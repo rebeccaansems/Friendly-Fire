@@ -80,9 +80,9 @@ public class GameController : MonoBehaviour
 
     public void EnemiesShoot()
     {
-        foreach (GameObject enemy in enemyRoster)
+        foreach (EnemyShoot enemy in enemyRoster.SelectMany(x => x.GetComponentsInChildren<EnemyShoot>()))
         {
-            enemy.GetComponentInChildren<EnemyShoot>().Shoot();
+            enemy.Shoot();
         }
     }
 
