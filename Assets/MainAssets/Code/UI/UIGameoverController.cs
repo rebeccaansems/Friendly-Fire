@@ -30,6 +30,7 @@ public class UIGameoverController : UIController
     public void ResetGame()
     {
         UISceneTransition.instance.LoadScene();
+        OverallController.instance.LoadLevel();
     }
 
     public void GotoLevelSelect()
@@ -45,6 +46,8 @@ public class UIGameoverController : UIController
     public void GotoNextLevel()
     {
         OverallController.instance.currentLevel++;
+        OverallController.instance.LoadLevel();
+
         UISceneTransition.instance.LoadScene(OverallController.instance.currentLevel + OverallController.instance.buildIndexVariance);
     }
 
@@ -68,12 +71,12 @@ public class UIGameoverController : UIController
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
         mainText.text += "Time: " + GameController.instance.timeTaken.ToString("0000") + "s";
-        
+
         nextLevelButton.interactable = starLevel > 0;
 
-        PlayerPrefs.SetInt("Stars" + GameController.instance.currentLevel.buildIndex, 
+        PlayerPrefs.SetInt("Stars" + GameController.instance.currentLevel.buildIndex,
             Mathf.Max(starLevel, PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0)));
-        
+
         Open(this.GetComponent<CanvasGroup>());
     }
 

@@ -44,6 +44,7 @@ public class UIPauseController : UIController
 
     public void ResetGame()
     {
+        OverallController.instance.LoadLevel();
         UISceneTransition.instance.LoadScene();
 
         SaveSettings();

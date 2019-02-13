@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class OverallController : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class OverallController : MonoBehaviour
     public int buildIndexVariance, levelSelectBuildIndex, tutorialBuildIndex;
 
     [HideInInspector]
-    public int invertControls, currentLevel;
+    public int invertControls, currentLevel, levelsPlayedSession;
 
     [HideInInspector]
     public float volume, rotSpeed;
+
+    private float timeOfLastAd;
 
     public static OverallController instance;
 
@@ -35,5 +38,17 @@ public class OverallController : MonoBehaviour
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 25);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
+    }
+
+    public void LoadLevel()
+    {
+        levelsPlayedSession++;
+        if (levelsPlayedSession > 5 && Time.realtimeSinceStartup - timeOfLastAd > 180)
+        {
+            timeOfLastAd = Time.realtimeSinceStartup;
+            levelsPlayedSession = 0;
+            Advertisement.Show();
+        }
+
     }
 }
