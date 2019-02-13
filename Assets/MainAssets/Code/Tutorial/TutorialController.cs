@@ -165,16 +165,25 @@ public class TutorialController : MonoBehaviour
 
     private void Hide(CanvasGroup panel)
     {
-        panel.alpha = 0;
-        panel.blocksRaycasts = false;
-        panel.interactable = false;
+        //panel.alpha = 0;
+        //panel.blocksRaycasts = false;
+        //panel.interactable = false;
+
+        panel.GetComponent<Animator>().SetBool("animIn", false);
     }
 
     private void Show(CanvasGroup panel)
     {
-        panel.alpha = 1;
-        panel.blocksRaycasts = true;
-        panel.interactable = true;
+        //panel.alpha = 1;
+        //panel.blocksRaycasts = true;
+        //panel.interactable = true;
+
+        panel.GetComponent<Animator>().SetBool("animIn", true);
+    }
+
+    public void Next()
+    {
+        UISceneTransition.instance.LoadScene(OverallController.instance.levelSelectBuildIndex);
     }
 
     #region enemy
@@ -191,11 +200,6 @@ public class TutorialController : MonoBehaviour
             enemy.transform.parent.GetComponent<SpriteRenderer>().enabled = true;
             enemy.transform.parent.GetComponent<Collider2D>().enabled = true;
         }
-    }
-
-    public void Next()
-    {
-        UISceneTransition.instance.LoadScene(OverallController.instance.levelSelectBuildIndex);
     }
 
     #endregion
