@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector]
+    public bool isDead;
+
     [SerializeField]
     private ParticleSystem particles, bursts;
 
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
     
     public void Die()
     {
+        isDead = true;
         shipImage.enabled = false;
 
         this.GetComponent<Animator>().SetBool("isDead", true);

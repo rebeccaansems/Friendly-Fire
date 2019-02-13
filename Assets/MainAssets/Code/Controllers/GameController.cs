@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     public bool isTutorial;
-    
+
     public int projSpeed;
 
     public LevelInfo currentLevel;
@@ -99,6 +99,6 @@ public class GameController : MonoBehaviour
     {
         gameIsPlaying = false;
         yield return new WaitForSeconds(1.5f);
-        UIGameoverController.instance.GameOver(true);
+        UIGameoverController.instance.GameOver(player.GetComponent<PlayerController>().isDead == false);
     }
 }
