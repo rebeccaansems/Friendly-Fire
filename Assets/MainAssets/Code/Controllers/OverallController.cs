@@ -35,7 +35,7 @@ public class OverallController : MonoBehaviour
     void Setup()
     {
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
-        rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 50);
+        rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 25);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
 
         if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 0)

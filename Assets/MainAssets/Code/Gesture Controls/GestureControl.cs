@@ -17,7 +17,7 @@ public class GestureControl : MonoBehaviour
 #if UNITY_EDITOR
             if (Input.GetMouseButton(0))
             {
-                localRotSpeed *= 12;
+                localRotSpeed *= 24;
 
                 Vector3 mousePos = Input.mousePosition;
                 mousePos.z = 10;
