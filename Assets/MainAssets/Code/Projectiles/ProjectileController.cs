@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
-{[SerializeField]
+{
+    [SerializeField]
     private ProjectileEffects particles;
 
     [SerializeField]
@@ -23,7 +24,8 @@ public class ProjectileController : MonoBehaviour
 
     public void IgnoreCollider(Collider2D collider)
     {
-        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider);
+        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider, true);
+        StartCoroutine(ProjectileHasBeenShot(collider));
     }
 
     private void OnBecameInvisible()
@@ -60,6 +62,12 @@ public class ProjectileController : MonoBehaviour
         particles.Die();
 
         Destroy(this.gameObject);
+    }
+
+    IEnumerator ProjectileHasBeenShot(Collider2D collider)
+    {
+        yield return new WaitForSeconds(0.05f);
+        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider, false);
     }
 
 }

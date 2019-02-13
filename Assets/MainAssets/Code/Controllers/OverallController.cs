@@ -7,7 +7,7 @@ public class OverallController : MonoBehaviour
     public LevelInfo[] allLevels;
     public LevelInfo tutorialLevel;
 
-    public int buildIndexVariance;
+    public int buildIndexVariance, levelSelectBuildIndex;
 
     [HideInInspector]
     public int invertControls, currentLevel;

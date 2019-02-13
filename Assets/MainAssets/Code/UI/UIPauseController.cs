@@ -56,7 +56,7 @@ public class UIPauseController : UIController
 
     public void GotoLevelSelect()
     {
-        UISceneTransition.instance.LoadScene("Level Select");
+        UISceneTransition.instance.LoadScene(OverallController.instance.levelSelectBuildIndex);
 
         SaveSettings();
     }
