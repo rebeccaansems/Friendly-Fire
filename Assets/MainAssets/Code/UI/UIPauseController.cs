@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIPauseController : UIController
 {
@@ -45,7 +44,7 @@ public class UIPauseController : UIController
 
     public void ResetGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UISceneTransition.instance.LoadScene();
 
         SaveSettings();
     }
@@ -57,7 +56,7 @@ public class UIPauseController : UIController
 
     public void GotoLevelSelect()
     {
-        SceneManager.LoadScene("Level Select");
+        UISceneTransition.instance.LoadScene("Level Select");
 
         SaveSettings();
     }

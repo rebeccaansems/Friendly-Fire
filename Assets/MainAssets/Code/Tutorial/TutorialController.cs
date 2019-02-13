@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour
 {
@@ -196,7 +195,7 @@ public class TutorialController : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene(0);
+        UISceneTransition.instance.LoadScene(0);
     }
 
     #endregion

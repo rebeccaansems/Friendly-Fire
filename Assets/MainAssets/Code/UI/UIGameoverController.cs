@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIGameoverController : UIController
 {
@@ -30,12 +29,12 @@ public class UIGameoverController : UIController
 
     public void ResetGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UISceneTransition.instance.LoadScene();
     }
 
     public void GotoLevelSelect()
     {
-        SceneManager.LoadScene("Level Select");
+        UISceneTransition.instance.LoadScene("Level Select");
     }
 
     public void Tweet()
@@ -46,7 +45,7 @@ public class UIGameoverController : UIController
     public void GotoNextLevel()
     {
         OverallController.instance.currentLevel++;
-        SceneManager.LoadScene(OverallController.instance.currentLevel + OverallController.instance.buildIndexVariance);
+        UISceneTransition.instance.LoadScene(OverallController.instance.currentLevel + OverallController.instance.buildIndexVariance);
     }
 
     public void GameOver(bool playerWon)

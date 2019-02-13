@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class OverallController : MonoBehaviour
 {
@@ -41,7 +40,7 @@ public class OverallController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 0)
         {
-            SceneManager.LoadScene(tutorialLevel.buildIndex + buildIndexVariance - 1);
+            UISceneTransition.instance.LoadScene(tutorialLevel.buildIndex + buildIndexVariance - 1);
         }
     }
 }

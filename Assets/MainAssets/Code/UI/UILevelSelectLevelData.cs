@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UILevelSelectLevelData : MonoBehaviour
@@ -43,7 +42,7 @@ public class UILevelSelectLevelData : MonoBehaviour
     public void LoadLevel()
     {
         OverallController.instance.currentLevel = levelToLoad.buildIndex;
-        SceneManager.LoadScene(levelToLoad.buildIndex + OverallController.instance.buildIndexVariance);
+        UISceneTransition.instance.LoadScene(levelToLoad.buildIndex + OverallController.instance.buildIndexVariance);
     }
 
     private void DisplayStars()
