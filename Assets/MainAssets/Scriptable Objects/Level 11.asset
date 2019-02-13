@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Intermediate
   buildIndex: 11
   levelNumber: 11
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Isolated Pawn
+  starLevels: 020000000300000005000000
