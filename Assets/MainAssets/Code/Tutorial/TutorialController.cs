@@ -50,6 +50,9 @@ public class TutorialController : MonoBehaviour
                 currentResponse = 0;
 
                 Time.timeScale = 0;
+
+                Show(commanderPanel);
+                Show(responsePanel);
                 break;
             case 1:
                 currentCommander = 1;
