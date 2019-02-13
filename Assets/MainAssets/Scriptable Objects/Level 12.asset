@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Intermediate
   buildIndex: 12
   levelNumber: 12
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Windmill
+  starLevels: 020000000300000005000000
