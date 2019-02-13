@@ -16,6 +16,6 @@ public class LevelInfo : ScriptableObject
     public void UpdateInfo(int number)
     {
         levelNumber = number;
-        buildIndex = levelNumber;
+        buildIndex = levelNumber - 1;
     }
 }

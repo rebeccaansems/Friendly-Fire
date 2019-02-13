@@ -7,7 +7,7 @@ public class OverallController : MonoBehaviour
     public LevelInfo[] allLevels;
     public LevelInfo tutorialLevel;
 
-    public int buildIndexVariance, levelSelectBuildIndex;
+    public int buildIndexVariance, levelSelectBuildIndex, tutorialBuildIndex;
 
     [HideInInspector]
     public int invertControls, currentLevel;
@@ -23,8 +23,6 @@ public class OverallController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-
-            Setup();
         }
         else
         {
@@ -32,15 +30,10 @@ public class OverallController : MonoBehaviour
         }
     }
 
-    void Setup()
+    void Start()
     {
         volume = PlayerPrefs.GetFloat("Volume", 0.5f);
         rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 25);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
-
-        if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 0)
-        {
-            UISceneTransition.instance.LoadScene(tutorialLevel.buildIndex + buildIndexVariance - 1);
-        }
     }
 }

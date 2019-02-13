@@ -195,7 +195,7 @@ public class TutorialController : MonoBehaviour
 
     public void Next()
     {
-        UISceneTransition.instance.LoadScene(0);
+        UISceneTransition.instance.LoadScene(OverallController.instance.levelSelectBuildIndex);
     }
 
     #endregion
