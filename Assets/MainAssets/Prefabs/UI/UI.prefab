@@ -650,10 +650,10 @@ RectTransform:
   m_Father: {fileID: 7979530736445530128}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.48979592, y: 0}
+  m_AnchorMax: {x: 0.48979592, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 124.12516, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9036233987358421192
 CanvasRenderer:
@@ -3108,7 +3108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotsText: {fileID: 6205444597524283375}
-  timeText: {fileID: 6205444597636520616}
+  parText: {fileID: 6205444597636520616}
   levelNameText: {fileID: 1607486058}
 --- !u!1 &6205444596464054476
 GameObject:
@@ -4527,7 +4527,7 @@ GameObject:
   - component: {fileID: 6205444597636520617}
   - component: {fileID: 6205444597636520616}
   m_Layer: 5
-  m_Name: Time Text
+  m_Name: Par Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,7 +4580,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Time: 1000s'
+  m_text: 'Shot Par: 01'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f2b02098e9657a4faa3fc8db1f740d9, type: 2}
   m_sharedMaterial: {fileID: 21991591153975552, guid: 1f2b02098e9657a4faa3fc8db1f740d9,
@@ -4650,10 +4650,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 21.946655}
   m_textInfo:
     textComponent: {fileID: 6205444597636520616}
-    characterCount: 11
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -5983,10 +5983,10 @@ RectTransform:
   m_Father: {fileID: 5541303893759391538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 124.12516, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &635579771838787601
 CanvasRenderer:
