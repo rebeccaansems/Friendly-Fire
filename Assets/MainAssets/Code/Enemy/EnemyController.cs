@@ -41,6 +41,8 @@ public class EnemyController : MonoBehaviour
 
         GameController.instance.RemoveFromEnemyRoster(this.gameObject);
         this.GetComponent<Animator>().SetBool("isDead", true);
+
+        Destroy(this.GetComponent<Collider2D>());
         Destroy(this.gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length * 2);
     }
 
