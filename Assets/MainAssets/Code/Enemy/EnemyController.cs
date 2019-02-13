@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
 
     public void Burst()
     {
-        if (particles != null)
+        if (bursts != null)
         {
             bursts.Stop();
             bursts.Play();
