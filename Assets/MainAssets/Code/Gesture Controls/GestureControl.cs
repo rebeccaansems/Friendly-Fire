@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GestureControl : MonoBehaviour
 {
+    private float rotation;
+
     private void Update()
     {
         if (Time.timeScale != 0 && GameController.instance.gameIsPlaying)
@@ -67,15 +69,45 @@ public class GestureControl : MonoBehaviour
 #endif
             Vector3 playerPos = GameController.instance.player.transform.position;
 
-            float rotation = (invertRotation * rotY) - (invertRotation * rotX);
+            rotation = (invertRotation * rotY) - (invertRotation * rotX);
             GameController.instance.player.transform.Rotate(Vector3.forward, rotation);
-            
+
             if (rotation != 0)
             {
                 GameController.instance.player.GetComponent<PlayerController>().Burst();
+
+                PlayAudio(true);
+            }
+            else
+            {
+                PlayAudio(false);
             }
 
             GameController.instance.EnemiesRotate(rotation);
+        }
+    }
+
+    private void PlayAudio(bool play)
+    {
+        this.GetComponent<AudioSource>().volume = OverallController.instance.volume;
+
+        if (this.GetComponent<AudioSource>().isPlaying == true && play == false)
+        {
+            StartCoroutine(StopAudio());
+        }
+        else if (this.GetComponent<AudioSource>().isPlaying == false && play == true)
+        {
+            StopAllCoroutines();
+            this.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    IEnumerator StopAudio()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (rotation == 0)
+        {
+            this.GetComponent<AudioSource>().Stop();
         }
     }
 }

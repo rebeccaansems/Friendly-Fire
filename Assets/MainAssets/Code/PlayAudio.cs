@@ -5,11 +5,17 @@ public class PlayAudio : MonoBehaviour
 {
     public AudioClip[] AudioClips;
 
+    private AudioSource audioSource;
+
+    public void Start()
+    {
+        audioSource = this.GetComponent<AudioSource>();
+    }
+
     public void Play(int num)
     {
-        this.GetComponent<AudioSource>().clip = AudioClips[num];
-        this.GetComponent<AudioSource>().volume = OverallController.instance.volume;
-        this.GetComponent<AudioSource>().Play();
+        audioSource.volume = OverallController.instance.volume;
+        audioSource.PlayOneShot(AudioClips[num]);
     }
 
     public void Play()
@@ -25,6 +31,14 @@ public class PlayAudio : MonoBehaviour
     public void PlayRandom(int min, int max)
     {
         Play(Random.Range(min, max));
+    }
+
+    public void Stop()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 
 }
