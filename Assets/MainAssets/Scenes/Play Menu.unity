@@ -893,19 +893,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 790321332, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_AnchorMax.x
@@ -933,11 +953,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1505239500, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_AnchorMax.x
@@ -965,11 +997,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1051545128, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_SizeDelta.x

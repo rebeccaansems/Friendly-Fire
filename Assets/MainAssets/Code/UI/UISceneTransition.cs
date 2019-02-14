@@ -32,6 +32,7 @@ public class UISceneTransition : MonoBehaviour
 
     IEnumerator LoadSceneDelayed(int buildIndex)
     {
+        this.GetComponent<PlayAudio>().Play(0);
         this.GetComponent<Animator>().SetBool("transOut", true);
 
         yield return new WaitForSecondsRealtime(0.5f);
