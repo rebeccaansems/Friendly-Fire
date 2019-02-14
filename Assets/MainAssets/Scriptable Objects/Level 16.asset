@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Reflect
   buildIndex: 16
   levelNumber: 16
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Spinning Dial
+  starLevels: 010000000200000004000000
