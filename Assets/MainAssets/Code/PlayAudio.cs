@@ -8,7 +8,7 @@ public class PlayAudio : MonoBehaviour
     public void Play(int num)
     {
         this.GetComponent<AudioSource>().clip = AudioClips[num];
-        this.GetComponent<AudioSource>().volume = GameData.instance.sfxVolume;
+        this.GetComponent<AudioSource>().volume = OverallController.instance.volume;
         this.GetComponent<AudioSource>().Play();
     }
 

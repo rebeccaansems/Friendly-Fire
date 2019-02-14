@@ -23,6 +23,8 @@ public class PlayerShoot : MonoBehaviour
 
             Vector3 startPos = transform.position + new Vector3(0, 0, 0.1f);
 
+            this.GetComponent<PlayAudio>().PlayRandom();
+
             GameObject newProj = Instantiate(projectile, startPos, transform.rotation);
             GameController.instance.player.GetComponent<PlayerController>().ShootEffectPlay();
             newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());

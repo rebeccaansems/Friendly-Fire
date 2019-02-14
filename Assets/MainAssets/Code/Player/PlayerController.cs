@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         this.GetComponent<Animator>().SetBool("isDead", true);
         GameController.instance.gameIsPlaying = false;
 
+        this.GetComponent<PlayAudio>().PlayRandom();
+
         if (particles != null)
         {
             particles.transform.parent = null;

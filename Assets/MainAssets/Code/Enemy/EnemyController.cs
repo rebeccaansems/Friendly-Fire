@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        this.GetComponent<PlayAudio>().PlayRandom();
         shipImage.enabled = false;
 
         if (particles != null)
