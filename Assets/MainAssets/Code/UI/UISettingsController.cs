@@ -9,7 +9,7 @@ public class UISettingsController : UIController
     private CanvasGroup[] contentPanels;
 
     [SerializeField]
-    private Slider senseSlider;
+    private Slider senseSlider, volumeSlider;
 
     [SerializeField]
     private Toggle invertToggle;
@@ -34,6 +34,12 @@ public class UISettingsController : UIController
     {
         OpenWithoutStack(contentPanels[currentContentPanel]);
         Open(this.GetComponent<CanvasGroup>());
+    }
+
+    public void VolumeChanged()
+    {
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
+        OverallController.instance.volume = volumeSlider.value;
     }
 
     private void LoadSettings()

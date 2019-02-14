@@ -37,8 +37,8 @@ public class BackgroundMusic : MonoBehaviour
             aud.playOnAwake = true;
             aud.loop = true;
             aud.Play();
-            aud.volume = GameData.instance.musicVolume;
-            currVolume = GameData.instance.musicVolume;
+            aud.volume = OverallController.instance.volume;
+            currVolume = OverallController.instance.volume;
 
             StartCoroutine(PlayBackgroundMusic());
         }
@@ -55,10 +55,10 @@ public class BackgroundMusic : MonoBehaviour
 
     public void Update()
     {
-        if (currVolume != GameData.instance.musicVolume)
+        if (currVolume != OverallController.instance.volume)
         {
-            aud.volume = GameData.instance.musicVolume;
-            currVolume = GameData.instance.musicVolume;
+            aud.volume = OverallController.instance.volume;
+            currVolume = OverallController.instance.volume;
         }
     }
 }

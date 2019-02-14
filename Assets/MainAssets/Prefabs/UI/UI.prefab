@@ -650,10 +650,10 @@ RectTransform:
   m_Father: {fileID: 7979530736445530128}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.48979592, y: 0}
-  m_AnchorMax: {x: 0.48979592, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 124.12516, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9036233987358421192
 CanvasRenderer:
@@ -876,6 +876,7 @@ MonoBehaviour:
   - {fileID: 7738355509329860219}
   - {fileID: 4455990571785371179}
   senseSlider: {fileID: 4489650941418736007}
+  volumeSlider: {fileID: 1215670812442495933}
   invertToggle: {fileID: 6193977595844285904}
 --- !u!95 &693424902
 Animator:
@@ -2126,7 +2127,18 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7953277190718464946}
+        m_MethodName: VolumeChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5022242859975575556
@@ -5983,10 +5995,10 @@ RectTransform:
   m_Father: {fileID: 5541303893759391538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 124.12516, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &635579771838787601
 CanvasRenderer:

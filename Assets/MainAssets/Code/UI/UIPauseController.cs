@@ -9,7 +9,7 @@ public class UIPauseController : UIController
     private CanvasGroup[] contentPanels;
 
     [SerializeField]
-    private Slider senseSlider;
+    private Slider senseSlider, volumeSlider;
 
     [SerializeField]
     private Toggle invertToggle;
@@ -48,6 +48,12 @@ public class UIPauseController : UIController
         UISceneTransition.instance.LoadScene();
 
         SaveSettings();
+    }
+
+    public void VolumeChanged()
+    {
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
+        OverallController.instance.volume = volumeSlider.value;
     }
 
     public void Tweet()
