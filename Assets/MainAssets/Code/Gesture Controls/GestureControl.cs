@@ -104,7 +104,7 @@ public class GestureControl : MonoBehaviour
 
     IEnumerator StopAudio()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         if (rotation == 0)
         {
             this.GetComponent<AudioSource>().Stop();
