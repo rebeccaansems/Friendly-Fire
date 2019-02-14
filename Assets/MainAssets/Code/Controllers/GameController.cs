@@ -101,4 +101,12 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         UIGameoverController.instance.GameOver(player.GetComponent<PlayerController>().isDead == false);
     }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            UIPauseController.instance.PauseGame();
+        }
+    }
 }
