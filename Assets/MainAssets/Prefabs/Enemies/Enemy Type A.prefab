@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4542762141122576903}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &238891320
 SpriteRenderer:
@@ -109,7 +109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4542762141122576903}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!198 &1568803758
 ParticleSystem:
@@ -4865,7 +4865,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4542762141122576903}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2068578348
 ParticleSystem:
@@ -9605,7 +9605,7 @@ GameObject:
   - component: {fileID: 5137146720975166087}
   - component: {fileID: 2040914820275609532}
   m_Layer: 11
-  m_Name: Enemy Line
+  m_Name: Enemy Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9798,9 +9798,9 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 2629874217478482486}
+  - {fileID: 238891319}
   - {fileID: 1568803756}
   - {fileID: 2068578346}
-  - {fileID: 238891319}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10082,8 +10082,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6110b63f3871952478ed5194db9da55d, type: 3}
   - {fileID: 8300000, guid: c159a0084b9722d4f801f0b947bd0a89, type: 3}
   - {fileID: 8300000, guid: e278ae8f40dcb9041a5af84071a641b8, type: 3}
-  - {fileID: 8300000, guid: 9095a6239c8fd6c4eaf72edb64702e92, type: 3}
   - {fileID: 8300000, guid: 0bb760332d6d8044aab3175ab6945dd8, type: 3}
-  - {fileID: 8300000, guid: f3724a87d0339b44493e10f18895684d, type: 3}
-  - {fileID: 8300000, guid: 9fa5094f971c5314b826b8c879ede14e, type: 3}
-  - {fileID: 8300000, guid: 99c03cb399d7b0f4c8a1a8fb4b0665d2, type: 3}

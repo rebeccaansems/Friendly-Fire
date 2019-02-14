@@ -5,17 +5,13 @@ public class PlayAudio : MonoBehaviour
 {
     public AudioClip[] AudioClips;
 
-    private AudioSource audioSource;
-
-    public void Start()
-    {
-        audioSource = this.GetComponent<AudioSource>();
-    }
-
     public void Play(int num)
     {
-        audioSource.volume = OverallController.instance.volume;
-        audioSource.PlayOneShot(AudioClips[num]);
+        var audio = new GameObject().AddComponent<AudioSource>();
+        audio.volume = OverallController.instance.volume;
+        Debug.Log(AudioClips[num] + " " + AudioClips[num].length);
+        audio.PlayOneShot(AudioClips[num]);
+        Destroy(audio, AudioClips[num].length);
     }
 
     public void Play()
@@ -32,13 +28,4 @@ public class PlayAudio : MonoBehaviour
     {
         Play(Random.Range(min, max));
     }
-
-    public void Stop()
-    {
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
-    }
-
 }

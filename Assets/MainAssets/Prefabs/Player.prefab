@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 260504979715370368}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!198 &1306593084
 ParticleSystem:
@@ -4786,7 +4786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 260504979715370368}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2068974150
 ParticleSystem:
@@ -9546,9 +9546,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4498570973174378384}
+  - {fileID: 1910524508633200062}
   - {fileID: 1306593082}
   - {fileID: 2068974148}
-  - {fileID: 1910524508633200062}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9810,11 +9810,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6110b63f3871952478ed5194db9da55d, type: 3}
   - {fileID: 8300000, guid: c159a0084b9722d4f801f0b947bd0a89, type: 3}
   - {fileID: 8300000, guid: e278ae8f40dcb9041a5af84071a641b8, type: 3}
-  - {fileID: 8300000, guid: 9095a6239c8fd6c4eaf72edb64702e92, type: 3}
   - {fileID: 8300000, guid: 0bb760332d6d8044aab3175ab6945dd8, type: 3}
-  - {fileID: 8300000, guid: f3724a87d0339b44493e10f18895684d, type: 3}
-  - {fileID: 8300000, guid: 9fa5094f971c5314b826b8c879ede14e, type: 3}
-  - {fileID: 8300000, guid: 99c03cb399d7b0f4c8a1a8fb4b0665d2, type: 3}
 --- !u!1 &3749345283560533212
 GameObject:
   m_ObjectHideFlags: 0
@@ -9844,7 +9840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 260504979715370368}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8750970081100676242
 SpriteRenderer:
@@ -9908,7 +9904,7 @@ GameObject:
   - component: {fileID: 7189481913734040725}
   - component: {fileID: 4540533048073015150}
   m_Layer: 10
-  m_Name: Player Line
+  m_Name: Player Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
