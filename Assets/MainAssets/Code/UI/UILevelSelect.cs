@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UILevelSelect : UIController
 {
@@ -13,6 +14,12 @@ public class UILevelSelect : UIController
 
     [SerializeField]
     private CanvasGroup[] contentPanels;
+
+    [SerializeField]
+    private Image[] dotImages;
+
+    [SerializeField]
+    private Sprite emptyDotImage, filledDotImage;
 
     private int currentWorld;
 
@@ -56,6 +63,12 @@ public class UILevelSelect : UIController
         {
             currentWorld = contentPanels.Length - 1;
         }
+
+        foreach(Image image in dotImages)
+        {
+            image.sprite = emptyDotImage;
+        }
+        dotImages[currentWorld].sprite = filledDotImage;
 
         foreach (CanvasGroup panel in contentPanels)
         {
