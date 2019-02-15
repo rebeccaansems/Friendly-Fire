@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class PlayAudio : MonoBehaviour
 {
     public AudioClip[] AudioClips;
 
     public void Play(int num)
     {
-        var audio = new GameObject().AddComponent<AudioSource>();
-        audio.volume = OverallController.instance.volume;
-        Debug.Log(AudioClips[num] + " " + AudioClips[num].length);
-        audio.PlayOneShot(AudioClips[num]);
+        GameObject audio = new GameObject();
+        audio.AddComponent<AudioSource>();
+
+        audio.name = AudioClips[num].name;
+        audio.GetComponent<AudioSource>().clip = AudioClips[num];
+        audio.GetComponent<AudioSource>().loop = false;
+        audio.GetComponent<AudioSource>().volume = OverallController.instance.volume;
+
+        audio.GetComponent<AudioSource>().Play();
+
         Destroy(audio, AudioClips[num].length);
     }
 
