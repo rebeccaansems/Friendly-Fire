@@ -2411,6 +2411,7 @@ GameObject:
   - component: {fileID: 3024740810775495613}
   - component: {fileID: 5234140577141124609}
   - component: {fileID: 2087703218}
+  - component: {fileID: 4572331985948200656}
   m_Layer: 5
   m_Name: Game Over Panel
   m_TagString: UI Panel
@@ -2516,6 +2517,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4572331985948200656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775474147371112679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dde8107060abe94b852ddd87cf435da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 1c01fee4e2760e84dbc4bca039c80282, type: 3}
+  - {fileID: 8300000, guid: be03c415b227a4f428f194ecd3c09353, type: 3}
+  - {fileID: 8300000, guid: 43c992e1802592f4a8eb9823cbd5d2d2, type: 3}
+  - {fileID: 8300000, guid: 1dee382d9680c034aa3b76e670215e8c, type: 3}
+  - {fileID: 8300000, guid: 842d05ab1eb6a7d4da231f546c4df3cd, type: 3}
 --- !u!1 &936445963501823715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,6 +3036,17 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_MethodName: Next
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4572331985948200656}
+        m_MethodName: Play
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
