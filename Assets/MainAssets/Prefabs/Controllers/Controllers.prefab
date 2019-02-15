@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 3002743300778430556}
   - component: {fileID: 3002743300778430557}
   - component: {fileID: 1499579829}
+  - component: {fileID: 8243285881536736527}
   m_Layer: 12
   m_Name: Gesture Controller
   m_TagString: Untagged
@@ -267,6 +268,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8243285881536736527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002743300778430558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1c21a01d36c8428cbe07b526f766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3140607327669500218
 GameObject:
   m_ObjectHideFlags: 0

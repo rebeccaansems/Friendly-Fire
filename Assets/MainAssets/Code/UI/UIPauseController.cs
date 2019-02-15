@@ -64,13 +64,15 @@ public class UIPauseController : UIController
     public void GotoLevelSelect()
     {
         UISceneTransition.instance.LoadScene(OverallController.instance.levelSelectBuildIndex);
-
         SaveSettings();
     }
 
     private void LoadSettings()
     {
         senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 50);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+
+        invertToggle.isOn = PlayerPrefs.GetInt("InvertControls", 1) == -1;
     }
 
     private void SaveSettings()

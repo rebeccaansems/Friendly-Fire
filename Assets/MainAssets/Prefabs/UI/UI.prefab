@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 6511517731921672557}
   - component: {fileID: 3255516298245475849}
   - component: {fileID: 1825886191219561359}
+  - component: {fileID: 8368316039876900846}
   m_Layer: 5
   m_Name: Transition Panel
   m_TagString: Untagged
@@ -346,6 +347,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioClips:
   - {fileID: 8300000, guid: 789c8b3da4292dc469fa2f961231f890, type: 3}
+--- !u!114 &8368316039876900846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381894254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1c21a01d36c8428cbe07b526f766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441571390
 GameObject:
   m_ObjectHideFlags: 0

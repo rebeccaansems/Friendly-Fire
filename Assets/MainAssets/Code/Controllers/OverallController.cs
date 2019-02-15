@@ -49,6 +49,5 @@ public class OverallController : MonoBehaviour
             levelsPlayedSession = 0;
             Advertisement.Show();
         }
-
     }
 }

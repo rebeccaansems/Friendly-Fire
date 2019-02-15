@@ -27,12 +27,14 @@ public class UISettingsController : UIController
     public void Hide()
     {
         UITopBannerController.instance.Show();
+        SaveSettings();
         Close(this.GetComponent<CanvasGroup>());
     }
 
     public void Show()
     {
         OpenWithoutStack(contentPanels[currentContentPanel]);
+        LoadSettings();
         Open(this.GetComponent<CanvasGroup>());
     }
 
@@ -45,6 +47,9 @@ public class UISettingsController : UIController
     private void LoadSettings()
     {
         senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 50);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+
+        invertToggle.isOn = PlayerPrefs.GetInt("InvertControls", 1) == -1;
     }
 
     private void SaveSettings()

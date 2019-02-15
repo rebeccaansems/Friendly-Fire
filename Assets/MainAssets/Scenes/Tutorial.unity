@@ -757,7 +757,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3002743299731682795}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048481018}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08a5963510e137848a4cb5ca22e30ad5, type: 3}
@@ -1332,31 +1332,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2048481018 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1312553172, guid: 697be37faa7ba0241a1487e0e9889921,
-    type: 3}
-  m_PrefabInstance: {fileID: 3002743299731682795}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2048481019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048481018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dde8107060abe94b852ddd87cf435da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClips:
-  - {fileID: 8300000, guid: ea47630d26e03604b8242ae4a80ae8ec, type: 3}
-  - {fileID: 8300000, guid: 9af75d0689d48044ba5b14cf45cbd9b4, type: 3}
-  - {fileID: 8300000, guid: 4cd1b4cd8899a814886213d919b3a3aa, type: 3}
-  - {fileID: 8300000, guid: ef8122709e8f3b84c8b03ac275bd0ba7, type: 3}
-  - {fileID: 8300000, guid: 78401bbd94af8d94c8d19612f1085a94, type: 3}
-  - {fileID: 8300000, guid: da6f1bcaa1b57eb4b92d03b6ddf5efb8, type: 3}
 --- !u!1001 &260504980679633315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,10 +2023,5 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1312553175}
-    - target: {fileID: 8662251820052750982, guid: d4777ee44a620734d944427d4081a515,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -7.500122
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4777ee44a620734d944427d4081a515, type: 3}

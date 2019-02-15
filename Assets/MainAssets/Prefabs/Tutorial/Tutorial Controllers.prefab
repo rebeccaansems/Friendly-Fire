@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1312553173}
   - component: {fileID: 1312553174}
   - component: {fileID: 9145708279985519588}
+  - component: {fileID: 2048481019}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -108,6 +109,25 @@ MonoBehaviour:
   fingerCircle: {fileID: 0}
   fingerTapping: {fileID: 0}
   enemy: {fileID: 0}
+--- !u!114 &2048481019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312553172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dde8107060abe94b852ddd87cf435da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: ea47630d26e03604b8242ae4a80ae8ec, type: 3}
+  - {fileID: 8300000, guid: 9af75d0689d48044ba5b14cf45cbd9b4, type: 3}
+  - {fileID: 8300000, guid: 4cd1b4cd8899a814886213d919b3a3aa, type: 3}
+  - {fileID: 8300000, guid: ef8122709e8f3b84c8b03ac275bd0ba7, type: 3}
+  - {fileID: 8300000, guid: 78401bbd94af8d94c8d19612f1085a94, type: 3}
+  - {fileID: 8300000, guid: da6f1bcaa1b57eb4b92d03b6ddf5efb8, type: 3}
 --- !u!1 &1461445402
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +140,7 @@ GameObject:
   - component: {fileID: 1461445405}
   - component: {fileID: 1461445404}
   - component: {fileID: 1016754900}
+  - component: {fileID: 6215002043993713684}
   m_Layer: 12
   m_Name: Gesture Controller
   m_TagString: Untagged
@@ -275,6 +296,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6215002043993713684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461445402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1c21a01d36c8428cbe07b526f766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1754373545
 GameObject:
   m_ObjectHideFlags: 0
