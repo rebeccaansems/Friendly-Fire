@@ -27,10 +27,14 @@ public class TutorialController : MonoBehaviour
         rotationTutorialOn = 0;
         tappingTutorialOn = 0;
         enemyTutorialOn = 0;
+
+        this.GetComponent<PlayAudio>().PlayRandom();
     }
 
     public void NextStep(int choice)
     {
+        this.GetComponent<PlayAudio>().PlayRandom();
+
         responseChoice = choice;
         currentTutorialStep++;
     }
@@ -132,6 +136,8 @@ public class TutorialController : MonoBehaviour
 
                 UIGameoverController.instance.GameOver(true);
                 PlayerPrefs.SetInt("TutorialCompleted", 1);
+
+                currentTutorialStep++;
                 break;
         }
 
@@ -168,19 +174,11 @@ public class TutorialController : MonoBehaviour
 
     private void Hide(CanvasGroup panel)
     {
-        //panel.alpha = 0;
-        //panel.blocksRaycasts = false;
-        //panel.interactable = false;
-
         panel.GetComponent<Animator>().SetBool("animIn", false);
     }
 
     private void Show(CanvasGroup panel)
     {
-        //panel.alpha = 1;
-        //panel.blocksRaycasts = true;
-        //panel.interactable = true;
-
         panel.GetComponent<Animator>().SetBool("animIn", true);
     }
 
@@ -405,6 +403,7 @@ public class TutorialController : MonoBehaviour
     IEnumerator UpdateTutorialStep(float waitTime)
     {
         yield return new WaitForSecondsRealtime(waitTime);
+        this.GetComponent<PlayAudio>().PlayRandom();
         currentTutorialStep++;
     }
 

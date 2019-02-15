@@ -11,11 +11,13 @@ public class PlayAudio : MonoBehaviour
 
         audio.name = AudioClips[num].name;
         audio.GetComponent<AudioSource>().clip = AudioClips[num];
+        audio.GetComponent<AudioSource>().playOnAwake = false;
         audio.GetComponent<AudioSource>().loop = false;
         audio.GetComponent<AudioSource>().volume = OverallController.instance.volume;
 
         audio.GetComponent<AudioSource>().Play();
 
+        Debug.Log(AudioClips[num].length);
         Destroy(audio, AudioClips[num].length);
     }
 
