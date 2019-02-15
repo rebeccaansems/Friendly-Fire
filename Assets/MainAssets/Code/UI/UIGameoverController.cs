@@ -60,6 +60,8 @@ public class UIGameoverController : UIController
             headerText.text = "LEVEL CLEAR";
 
             DisplayStars();
+
+            this.GetComponent<PlayAudio>().Play(3);
         }
         else
         {
@@ -67,6 +69,8 @@ public class UIGameoverController : UIController
 
             nextLevelButton.interactable = false;
             DisplayEmptyStars();
+
+            this.GetComponent<PlayAudio>().Play(4);
         }
 
         mainText.text = "Shots: " + GameController.instance.shotsFired.ToString("00") + "\n";
