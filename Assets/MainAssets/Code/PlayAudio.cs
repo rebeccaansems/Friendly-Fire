@@ -17,7 +17,6 @@ public class PlayAudio : MonoBehaviour
 
         audio.GetComponent<AudioSource>().Play();
 
-        Debug.Log(AudioClips[num].length);
         Destroy(audio, AudioClips[num].length);
     }
 
