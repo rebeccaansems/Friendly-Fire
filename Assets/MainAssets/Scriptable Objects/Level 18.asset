@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Reflect
   buildIndex: 18
   levelNumber: 18
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Self Destructive
+  starLevels: 010000000300000005000000
