@@ -14,6 +14,7 @@ public class ShieldController : MonoBehaviour
     {
         if (collision.transform.tag.Contains("Projectile"))
         {
+            Burst();
             health--;
 
             if (health > -1)
@@ -22,8 +23,16 @@ public class ShieldController : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject);
+                Destroy(this.GetComponent<Collider2D>());
+                Destroy(this.GetComponent<SpriteRenderer>());
+                Destroy(this.gameObject, 1f);
             }
         }
+    }
+
+    private void Burst()
+    {
+        this.GetComponentInChildren<ParticleSystem>().Stop();
+        this.GetComponentInChildren<ParticleSystem>().Play();
     }
 }
