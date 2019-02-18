@@ -6,6 +6,9 @@ public class EnemyShoot : MonoBehaviour
 {
     public GameObject projectile;
 
+    [SerializeField]
+    private Collider2D shield;
+
     public void Shoot()
     {
         if (this.transform.parent.GetComponent<Renderer>().enabled == true)
@@ -18,7 +21,7 @@ public class EnemyShoot : MonoBehaviour
 
             this.GetComponent<PlayAudio>().PlayRandom();
 
-            newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>());
+            newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>(), shield);
             newProj.GetComponent<Rigidbody2D>().velocity =
                 (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projSpeed;
         }

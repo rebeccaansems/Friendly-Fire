@@ -22,10 +22,16 @@ public class ProjectileController : MonoBehaviour
         transform.up = this.GetComponent<Rigidbody2D>().velocity;
     }
 
-    public void IgnoreCollider(Collider2D collider)
+    public void IgnoreCollider(Collider2D ship, Collider2D shield)
     {
-        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider, true);
-        StartCoroutine(ProjectileHasBeenShot(collider));
+        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), ship, true);
+
+        if (shield != null)
+        {
+            Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), shield, true);
+        }
+
+        StartCoroutine(ProjectileHasBeenShot(ship));
     }
 
     private void OnBecameInvisible()
