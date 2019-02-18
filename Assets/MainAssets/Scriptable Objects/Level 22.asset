@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Shields
   buildIndex: 21
   levelNumber: 22
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Stickman
+  starLevels: 020000000300000004000000
