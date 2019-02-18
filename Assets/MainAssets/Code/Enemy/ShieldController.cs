@@ -15,6 +15,7 @@ public class ShieldController : MonoBehaviour
         if (collision.transform.tag.Contains("Projectile"))
         {
             Burst();
+            this.GetComponent<PlayAudio>().PlayRandom();
             health--;
 
             if (health > -1)

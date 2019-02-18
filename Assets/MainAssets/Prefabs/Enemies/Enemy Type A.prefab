@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 329801010}
   - component: {fileID: 329801009}
   - component: {fileID: 329801011}
+  - component: {fileID: 3247651583050991951}
   m_Layer: 11
   m_Name: Shield
   m_TagString: Untagged
@@ -193,6 +194,21 @@ MonoBehaviour:
   - {fileID: 21300018, guid: 0d3c810a2d2e3e2478ac3be2621a13b3, type: 3}
   - {fileID: 21300010, guid: 0d3c810a2d2e3e2478ac3be2621a13b3, type: 3}
   health: 2
+--- !u!114 &3247651583050991951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329801007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dde8107060abe94b852ddd87cf435da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: d1d24022de06781419fa19deb59a4a17, type: 3}
+  - {fileID: 8300000, guid: 5011cc88e9e97a6408c1c6a761f0d50a, type: 3}
 --- !u!1 &1568803755
 GameObject:
   m_ObjectHideFlags: 0
