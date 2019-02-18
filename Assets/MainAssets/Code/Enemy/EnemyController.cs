@@ -8,6 +8,9 @@ public class EnemyController : MonoBehaviour
     private ParticleSystem particles, bursts;
 
     [SerializeField]
+    private ParticleSystem[] projectileShootingPS;
+
+    [SerializeField]
     private SpriteRenderer shipImage;
 
     public void Start()
@@ -50,6 +53,12 @@ public class EnemyController : MonoBehaviour
     public void ShootEffectPlay()
     {
         this.GetComponent<Animator>().SetBool("isShooting", true);
+
+        foreach (ParticleSystem part in projectileShootingPS)
+        {
+            part.Stop();
+            part.Play();
+        }
     }
 
     public void ShootEffectStop()

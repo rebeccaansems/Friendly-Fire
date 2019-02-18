@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
 
     [SerializeField]
-    private ParticleSystem particles, bursts;
+    private ParticleSystem particles, bursts, projectileShoot;
 
     [SerializeField]
     private SpriteRenderer shipImage;
@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public void ShootEffectPlay()
     {
         this.GetComponent<Animator>().SetBool("isShooting", true);
+        projectileShoot.Stop();
+        projectileShoot.Play();
     }
 
     public void ShootEffectStop()

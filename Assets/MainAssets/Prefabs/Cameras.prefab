@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camTransform: {fileID: 4735771867158537832}
   shakeDuration: 0
-  shakeAmount: 0.4
+  shakeAmount: 0.2
   decreaseFactor: 1
 --- !u!1 &4735771867957946930
 GameObject:
