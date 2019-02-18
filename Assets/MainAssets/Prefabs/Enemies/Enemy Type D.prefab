@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6252592841881991167, guid: e72d273e9f8225e459a5626bd85c7289,
     type: 3}
-  shield: {fileID: 0}
+  shield: {fileID: 5128999880748490453}
 --- !u!114 &5179733574561122242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,7 +5184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6252592841881991167, guid: e72d273e9f8225e459a5626bd85c7289,
     type: 3}
-  shield: {fileID: 0}
+  shield: {fileID: 5128999880748490453}
 --- !u!114 &4385525446783460146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5273,6 +5273,12 @@ PrefabInstance:
 --- !u!4 &5128999880748490452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6929173713138469098, guid: c4b8f6c8ed3484848991b7d0beb191bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2811513836062840382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &5128999880748490453 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6929173713138469099, guid: c4b8f6c8ed3484848991b7d0beb191bd,
     type: 3}
   m_PrefabInstance: {fileID: 2811513836062840382}
   m_PrefabAsset: {fileID: 0}
