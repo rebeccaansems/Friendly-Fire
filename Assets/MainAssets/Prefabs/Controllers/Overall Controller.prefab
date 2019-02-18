@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b147bd0e613a0c247acf7a591ff173bd, type: 2}
   - {fileID: 11400000, guid: 751a19303f665ac4d940beb2644b684f, type: 2}
   tutorialLevel: {fileID: 11400000, guid: 87f90e4615020ed419285bfc194ca42f, type: 2}
-  buildIndexVariance: 2
+  buildIndexVariance: 3
   levelSelectBuildIndex: 1
   tutorialBuildIndex: 2
   invertControls: 0
