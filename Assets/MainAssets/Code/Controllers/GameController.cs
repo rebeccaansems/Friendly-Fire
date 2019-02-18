@@ -24,6 +24,9 @@ public class GameController : MonoBehaviour
 
     public LevelInfo currentLevel;
 
+
+    private CameraShake[] cameraShakes;
+
     private bool gameOver;
 
 
@@ -44,6 +47,7 @@ public class GameController : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRoster = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+        cameraShakes = FindObjectsOfType<CameraShake>();
 
         gameIsPlaying = true;
 
@@ -80,6 +84,11 @@ public class GameController : MonoBehaviour
 
     public void EnemiesShoot()
     {
+        foreach(CameraShake cam in cameraShakes)
+        {
+            cam.shakeDuration = 0.5f;
+        }
+
         foreach (EnemyShoot enemy in enemyRoster.SelectMany(x => x.GetComponentsInChildren<EnemyShoot>()))
         {
             enemy.Shoot();

@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 4735771867158537832}
   - component: {fileID: 4735771867158537831}
   - component: {fileID: 4735771867158537833}
+  - component: {fileID: 1710606057}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -157,6 +158,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scalableObjects: {fileID: 0}
+--- !u!114 &1710606057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735771867158537829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895b168963f5c2d4299bacdb84fdfdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4735771867158537832}
+  shakeDuration: 0
+  shakeAmount: 0.4
+  decreaseFactor: 1
 --- !u!1 &4735771867957946930
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +185,7 @@ GameObject:
   - component: {fileID: 4735771867957946933}
   - component: {fileID: 4735771867957946932}
   - component: {fileID: 4735771867957946931}
+  - component: {fileID: 1552600134}
   m_Layer: 0
   m_Name: Background Camera
   m_TagString: Untagged
@@ -239,6 +257,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4735771867957946930}
   m_Enabled: 1
+--- !u!114 &1552600134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735771867957946930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895b168963f5c2d4299bacdb84fdfdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4735771867957946933}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &7961833472432757648
 GameObject:
   m_ObjectHideFlags: 0
