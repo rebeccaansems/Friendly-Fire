@@ -26,7 +26,7 @@ public class ShieldController : MonoBehaviour
             {
                 Destroy(this.GetComponent<Collider2D>());
                 Destroy(this.GetComponent<SpriteRenderer>());
-                Destroy(this.gameObject, 1f);
+                //Destroy(this.gameObject, 1f);
             }
         }
     }

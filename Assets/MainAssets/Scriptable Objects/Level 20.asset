@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Shields
   buildIndex: 19
   levelNumber: 20
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Ganged Up
+  starLevels: 020000000300000005000000
