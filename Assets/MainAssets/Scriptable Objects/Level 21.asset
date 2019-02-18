@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Shields
   buildIndex: 20
   levelNumber: 21
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Double Hit
+  starLevels: 030000000500000006000000
