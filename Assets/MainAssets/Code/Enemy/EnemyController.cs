@@ -24,8 +24,15 @@ public class EnemyController : MonoBehaviour
 
     public void Update()
     {
-        particles.gameObject.SetActive(shipImage.GetComponent<SpriteRenderer>().enabled);
-        bursts.gameObject.SetActive(shipImage.GetComponent<SpriteRenderer>().enabled);
+        if (particles != null)
+        {
+            particles.gameObject.SetActive(shipImage.GetComponent<SpriteRenderer>().enabled);
+        }
+
+        if (bursts != null)
+        {
+            bursts.gameObject.SetActive(shipImage.GetComponent<SpriteRenderer>().enabled);
+        }
     }
 
     public void Burst()
