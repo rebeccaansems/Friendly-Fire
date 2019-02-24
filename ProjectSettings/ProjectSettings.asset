@@ -816,7 +816,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 32dc360e-06c6-4c6d-b58f-d260ce32398f
   framebufferDepthMemorylessMode: 0
-  projectName: Friendly Fire
+  projectName: HiveMind
   organizationId: rebecca-2351209
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
