@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 32
   m_EditorClassIdentifier: 
   worldName: Movement
-  buildIndex: 24
-  levelNumber: 24
+  buildIndex: 31
+  levelNumber: 32
   levelName: Tutorial A
   starLevels: 010000000200000003000000

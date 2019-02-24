@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 6
   m_EditorClassIdentifier: 
   worldName: Basic
-  buildIndex: 6
+  buildIndex: 5
   levelNumber: 6
   levelName: Red Rover
   starLevels: 020000000300000004000000

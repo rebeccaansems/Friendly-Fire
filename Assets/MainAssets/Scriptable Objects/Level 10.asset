@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 10
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 10
+  buildIndex: 9
   levelNumber: 10
   levelName: Clustered
   starLevels: 010000000200000003000000

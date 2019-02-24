@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 12
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 12
+  buildIndex: 11
   levelNumber: 12
   levelName: Windmill
   starLevels: 020000000300000005000000

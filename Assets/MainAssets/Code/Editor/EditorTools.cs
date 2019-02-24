@@ -27,6 +27,7 @@ public class EditorTools
             if (level.name.Contains("Level "))
             {
                 level.UpdateInfo(num);
+                EditorUtility.SetDirty(level);
                 num++;
             }
         }

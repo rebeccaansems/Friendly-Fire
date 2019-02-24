@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 9
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 9
+  buildIndex: 8
   levelNumber: 9
   levelName: Double Triangle
   starLevels: 020000000300000004000000

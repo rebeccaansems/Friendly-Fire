@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 8
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 8
+  buildIndex: 7
   levelNumber: 8
   levelName: Shifted Priorities
   starLevels: 010000000200000003000000

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 13
   m_EditorClassIdentifier: 
   worldName: Reflect
-  buildIndex: 13
+  buildIndex: 12
   levelNumber: 13
   levelName: Compact
   starLevels: 010000000200000003000000

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 7
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 7
+  buildIndex: 6
   levelNumber: 7
   levelName: Double Pacifist
   starLevels: 020000000300000004000000

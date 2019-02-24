@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   worldName: Basic
-  buildIndex: 1
+  buildIndex: 0
   levelNumber: 1
   levelName: Bootcamp A
   starLevels: 010000000200000003000000

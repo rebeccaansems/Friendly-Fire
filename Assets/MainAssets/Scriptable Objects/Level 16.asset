@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 16
   m_EditorClassIdentifier: 
   worldName: Reflect
-  buildIndex: 16
+  buildIndex: 15
   levelNumber: 16
   levelName: Spinning Dial
   starLevels: 010000000200000004000000

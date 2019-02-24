@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 17
   m_EditorClassIdentifier: 
   worldName: Reflect
-  buildIndex: 17
+  buildIndex: 16
   levelNumber: 17
   levelName: Drill Bit
   starLevels: 020000000400000006000000

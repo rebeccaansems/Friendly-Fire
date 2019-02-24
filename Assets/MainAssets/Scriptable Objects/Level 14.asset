@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 14
   m_EditorClassIdentifier: 
   worldName: Reflect
-  buildIndex: 14
+  buildIndex: 13
   levelNumber: 14
   levelName: Mirror Hall
   starLevels: 010000000200000003000000

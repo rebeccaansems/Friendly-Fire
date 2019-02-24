@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 11
   m_EditorClassIdentifier: 
   worldName: Intermediate
-  buildIndex: 11
+  buildIndex: 10
   levelNumber: 11
   levelName: Isolated Pawn
   starLevels: 020000000300000005000000

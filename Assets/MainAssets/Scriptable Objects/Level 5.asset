@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 5
   m_EditorClassIdentifier: 
   worldName: Basic
-  buildIndex: 5
+  buildIndex: 4
   levelNumber: 5
   levelName: Pentagon
   starLevels: 010000000200000004000000
