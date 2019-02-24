@@ -31,7 +31,7 @@ public class ProjectileController : MonoBehaviour
             Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), shield, true);
         }
 
-        StartCoroutine(ProjectileHasBeenShot(ship));
+        StartCoroutine(ProjectileHasBeenShot(ship, shield));
     }
 
     private void OnBecameInvisible()
@@ -70,12 +70,17 @@ public class ProjectileController : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    IEnumerator ProjectileHasBeenShot(Collider2D collider)
+    IEnumerator ProjectileHasBeenShot(Collider2D collider, Collider2D shield)
     {
         yield return new WaitForSeconds(0.1f);
         if (collider != null && this.GetComponent<Collider2D>() != null)
         {
             Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider, false);
+
+            if (shield != null)
+            {
+                Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), shield, false);
+            }
         }
     }
 
