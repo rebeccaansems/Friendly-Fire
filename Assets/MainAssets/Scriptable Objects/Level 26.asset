@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Advanced
   buildIndex: 25
   levelNumber: 26
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Center Pin
+  starLevels: 030000000500000006000000
