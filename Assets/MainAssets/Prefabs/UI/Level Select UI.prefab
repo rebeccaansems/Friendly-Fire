@@ -905,10 +905,10 @@ RectTransform:
   m_Father: {fileID: 7737534132345330874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.48979592, y: 0}
+  m_AnchorMax: {x: 0.48979592, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 124.12516, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &606493217158137547
 CanvasRenderer:
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a58ba3b92fc8cdc478bfabd4a3e29a5b, type: 2}
   - {fileID: 11400000, guid: 1f9812019189164448ff3a824accc071, type: 2}
   - {fileID: 11400000, guid: 680d252d324ccef43adea0f5c859c5b6, type: 2}
-  - {fileID: 11400000, guid: 30d751a0a8ae9ac4d948ffc8514f224e, type: 2}
+  - {fileID: 11400000, guid: 44dd580c3c496044ba9ce01d31cbe206, type: 2}
   - {fileID: 11400000, guid: 5361d5f87db9a074f9f57ae6bff63457, type: 2}
   contentPanels:
   - {fileID: 3978650784805528916}
@@ -3616,10 +3616,10 @@ RectTransform:
   m_Father: {fileID: 5314354775760556257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 124.12516, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4064642016902602920
 CanvasRenderer:
@@ -15055,7 +15055,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelToLoad
       value: 
-      objectReference: {fileID: 11400000, guid: 30d751a0a8ae9ac4d948ffc8514f224e,
+      objectReference: {fileID: 11400000, guid: de16a5db34ac689469edb1948dfb47cd,
         type: 2}
     - target: {fileID: 7244635883946785613, guid: faa324126ae3e1541a884d5965e6e862,
         type: 3}
@@ -16540,7 +16540,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelToLoad
       value: 
-      objectReference: {fileID: 11400000, guid: 1a41369023870a84e8842305b55c6bc8,
+      objectReference: {fileID: 11400000, guid: 44dd580c3c496044ba9ce01d31cbe206,
         type: 2}
     - target: {fileID: 7244635883946785613, guid: faa324126ae3e1541a884d5965e6e862,
         type: 3}

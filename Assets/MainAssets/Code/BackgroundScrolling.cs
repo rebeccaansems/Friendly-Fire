@@ -8,9 +8,15 @@ public class BackgroundScrolling : MonoBehaviour
 
     private void Start()
     {
-        this.transform.position = new Vector3(-12 * (GameController.instance.currentLevel.levelNumber % 6), 0, 0);
+        int levelNumber = 0;
+        if (GameController.instance != null)
+        {
+            levelNumber = GameController.instance.currentLevel.levelNumber;
+        }
 
-        for (int i = 0; i < GameController.instance.currentLevel.levelNumber % 6; i++)
+        this.transform.position = new Vector3(-12 * (levelNumber % 6), 0, 0);
+
+        for (int i = 0; i < levelNumber % 6; i++)
         {
             this.transform.GetChild(i).GetComponent<ScrollingChunk>().ResetLocation();
         }
