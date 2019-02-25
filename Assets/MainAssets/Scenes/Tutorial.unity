@@ -1765,22 +1765,22 @@ PrefabInstance:
     - target: {fileID: 4637255784653586909, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 124.12516
       objectReference: {fileID: 0}
     - target: {fileID: 4637255784653586909, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.48979592
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4637255784653586909, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.48979592
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4637255784653586909, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8276403776114199412, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
@@ -1805,22 +1805,22 @@ PrefabInstance:
     - target: {fileID: 9057075115645260713, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 124.12516
       objectReference: {fileID: 0}
     - target: {fileID: 9057075115645260713, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9057075115645260713, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9057075115645260713, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3283030051243872974, guid: d4777ee44a620734d944427d4081a515,
         type: 3}
@@ -1990,10 +1990,5 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1312553175}
-    - target: {fileID: 8662251820052750982, guid: d4777ee44a620734d944427d4081a515,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -7.500122
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4777ee44a620734d944427d4081a515, type: 3}
