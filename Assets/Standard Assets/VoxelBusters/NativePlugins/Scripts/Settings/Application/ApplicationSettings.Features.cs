@@ -16,60 +16,16 @@ namespace VoxelBusters.NativePlugins
 			[NotifyNPSettingsOnValueChange]
 			[Tooltip("If enabled, Address Book feature will be active within your application.")]
 			private		bool						m_usesAddressBook 	= true;
-
-#if !NATIVE_PLUGINS_LITE_VERSION
-			[SerializeField]
-			[NotifyNPSettingsOnValueChange]
-			[Tooltip("If enabled, Billing feature will be active within your application.")]
-			private		bool						m_usesBilling 		= true;
-
-			[NotifyNPSettingsOnValueChange]
-			[SerializeField]
-			[Tooltip("If enabled, Cloud Services feature will be active within your application.")]
-			private		bool						m_usesCloudServices = true;
-
-			[SerializeField]
-			[NotifyNPSettingsOnValueChange]
-			[Tooltip("If enabled, Game Services feature will be active within your application.")]
-			private		bool						m_usesGameServices 	= true;
-
-			[SerializeField]
-			[Tooltip("If enabled, Media Library feature will be active within your application.")]
-			private		MediaLibraryFeature			m_mediaLibrary 		= new MediaLibraryFeature() 
-			{
-				value	= true
-			};
-				
-#endif
 			[SerializeField]
 			[NotifyNPSettingsOnValueChange]
 			[Tooltip("If enabled, Network Connectivity feature will be active within your application.")]
 			private		bool						m_usesNetworkConnectivity = true;
-
-#if !NATIVE_PLUGINS_LITE_VERSION
-			[SerializeField]
-			[Tooltip("If enabled, Notification Service feature will be active within your application.")]
-			private		NotificationServiceFeature	m_notificationService = new NotificationServiceFeature()
-			{
-				value	= true
-			};
-#endif
+            
 			[SerializeField]
 			[NotifyNPSettingsOnValueChange]
 			[Tooltip("If enabled, Sharing feature will be active within your application.")]
 			private		bool						m_usesSharing 		= true;
-
-#if !NATIVE_PLUGINS_LITE_VERSION
-			[SerializeField]
-			[NotifyNPSettingsOnValueChange]
-			[Tooltip("If enabled, Twitter feature will be active within your application.")]
-			private		bool						m_usesTwitter 		= true;
-
-			[SerializeField]
-			[NotifyNPSettingsOnValueChange]
-			[Tooltip("If enabled, WebView feature will be active within your application.")]
-			private		bool						m_usesWebView 		= true;
-#endif
+           
 
 			#endregion
 
@@ -87,11 +43,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_usesBilling;
-#else
 					return false;
-#endif
 				}
 			}
 
@@ -99,11 +51,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_usesCloudServices;
-#else
 					return false;
-#endif
 				}
 			}
 			
@@ -111,11 +59,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_usesGameServices;
-#else
 					return false;
-#endif
 				}
 			}
 			
@@ -123,11 +67,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_mediaLibrary.value;
-#else
 					return false;
-#endif
 				}
 			}
 
@@ -135,11 +75,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_mediaLibrary;
-#else
 					return null;
-#endif
 				}
 			}
 
@@ -155,11 +91,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_notificationService.value;
-#else
 					return false;
-#endif
 				}
 			}
 
@@ -167,11 +99,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_notificationService;
-#else
 					return null;
-#endif
 				}
 			}
 
@@ -187,11 +115,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_usesTwitter;
-#else
 					return false;
-#endif
 				}
 			}
 
@@ -199,11 +123,7 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
-#if !NATIVE_PLUGINS_LITE_VERSION
-					return m_usesWebView;
-#else
 					return false;
-#endif
 				}
 			}
 			

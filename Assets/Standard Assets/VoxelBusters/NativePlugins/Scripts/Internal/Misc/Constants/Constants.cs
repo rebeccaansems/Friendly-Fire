@@ -103,13 +103,7 @@ namespace VoxelBusters.NativePlugins.Internal
 
         public const string kFullVersionProductURL = "https://www.assetstore.unity3d.com/en/#!/account/downloads/search=Cross Platform Native Plugins";
         public const string kLiteVersionProductURL = "https://www.assetstore.unity3d.com/en/#!/account/downloads/search=Cross Platform Native Plugins - Lite Version";
-        public const string kProductURL =
-#if NATIVE_PLUGINS_LITE_VERSION
-			kLiteVersionProductURL
-#else
-            kFullVersionProductURL
-#endif
-            ;
+        public const string kProductURL = kLiteVersionProductURL;
 
         #endregion
 
