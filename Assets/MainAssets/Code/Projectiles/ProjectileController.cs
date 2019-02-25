@@ -62,6 +62,10 @@ public class ProjectileController : MonoBehaviour
                 this.GetComponent<Rigidbody2D>().velocity = vel;
             }
         }
+        else if (collision.gameObject.tag == "Mirror")
+        {
+            this.GetComponent<PlayAudio>().Play();
+        }
         else if (collision.gameObject.tag != "Mirror")
         {
             Die(true);
