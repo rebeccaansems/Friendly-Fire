@@ -40,17 +40,7 @@ public class UIGameoverController : UIController
 
     public void Tweet()
     {
-        string storeLink = "https://itunes.apple.com/us/app/hivemind-free-space-puzzle/id1109489072?ls=1&mt=8";
-#if UNITY_ANDROID
-        storeLink = "https://play.google.com/store/apps/details?id=com.rebeccaansems.hivemind";
-#endif
-        string shareText = "I just got " + PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0) + " stars on level " +
-            GameController.instance.currentLevel.levelNumber + " of HiveMind, can you beat that? " + storeLink;
-
-        Debug.Log(shareText);
-
-        new NativeShare().SetText(shareText);
-        new NativeShare().Share();
+        Debug.Log("Tweet");
     }
 
     public void GotoNextLevel()

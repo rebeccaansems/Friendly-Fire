@@ -11,7 +11,7 @@ public class OverallController : MonoBehaviour
     public int buildIndexVariance, levelSelectBuildIndex, tutorialBuildIndex;
 
     [HideInInspector]
-    public int invertControls, currentLevel, levelsPlayedSession, maxLevel = 36;
+    public int invertControls, currentLevel, levelsPlayedSession;
 
     [HideInInspector]
     public float volume, rotSpeed;

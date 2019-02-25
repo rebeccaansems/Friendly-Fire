@@ -34,8 +34,6 @@ public class UILevelSelectLevelData : MonoBehaviour
 
     private void LockLevel()
     {
-        OverallController.instance.maxLevel = Mathf.Min(OverallController.instance.maxLevel, levelToLoad.levelNumber - 1);
-
         this.GetComponentInChildren<TextMeshProUGUI>().alpha = 0.5f;
         this.GetComponent<Button>().enabled = false;
         lockedImage.enabled = true;
