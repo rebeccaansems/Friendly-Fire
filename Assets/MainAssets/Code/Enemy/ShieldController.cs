@@ -9,7 +9,12 @@ public class ShieldController : MonoBehaviour
 
     [SerializeField]
     private int health;
-    
+
+    private void Start()
+    {
+        this.transform.parent.GetComponent<EdgeCollider2D>().enabled = false;
+    }
+
     public bool Damage()
     {
         Burst();
@@ -22,6 +27,8 @@ public class ShieldController : MonoBehaviour
         }
         else
         {
+            this.transform.parent.GetComponent<EdgeCollider2D>().enabled = true;
+
             Destroy(this.GetComponent<Collider2D>());
             Destroy(this.GetComponent<SpriteRenderer>());
             Destroy(this.gameObject, 1f);
