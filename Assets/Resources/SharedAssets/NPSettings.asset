@@ -15,18 +15,18 @@ MonoBehaviour:
   m_lastOpenedDateString: 
   m_applicationSettings:
     m_supportedFeatures:
-      m_usesAddressBook: 1
-      m_usesNetworkConnectivity: 1
+      m_usesAddressBook: 0
+      m_usesNetworkConnectivity: 0
       m_usesSharing: 1
     m_iOS:
-      m_storeIdentifier: 
+      m_storeIdentifier: 1109489072
       m_addressBookUsagePermissionDescription: $(PRODUCT_NAME) uses contacts
       m_cameraUsagePermissionDescription: $(PRODUCT_NAME) uses camera
       m_photoAlbumUsagePermissionDescription: $(PRODUCT_NAME) uses photo library
       m_photoAlbumModifyUsagePermissionDescription: $(PRODUCT_NAME) saves images to
         photo library
     m_android:
-      m_storeIdentifier: 
+      m_storeIdentifier: com.rebeccaansems.hivemind
   m_networkConnectivitySettings:
     m_hostAddressIPV4: 8.8.8.8
     m_hostAddressIPV6: 0:0:0:0:0:FFFF:0808:0808
