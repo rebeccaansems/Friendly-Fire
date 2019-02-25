@@ -215,8 +215,7 @@ public class NPBinding : SingletonPattern <NPBinding>
 		}
 	}
 #endif
-
-#if USES_SHARING
+    
 	/// <summary>
 	/// Returns platform specific interface to access Sharing feature.
 	/// </summary>
@@ -235,7 +234,6 @@ public class NPBinding : SingletonPattern <NPBinding>
 			return sharing;
 		}
 	}
-#endif
 
 #if USES_TWITTER
 	/// <summary>
