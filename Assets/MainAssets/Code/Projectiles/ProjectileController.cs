@@ -49,6 +49,10 @@ public class ProjectileController : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyController>().Die();
         }
+        else if (collision.gameObject.tag == "Shield")
+        {
+            collision.gameObject.GetComponent<ShieldController>().Damage();
+        }
 
         if (collision.gameObject.tag != "Mirror")
         {
