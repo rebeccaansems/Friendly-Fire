@@ -15,5 +15,5 @@ MonoBehaviour:
   worldName: Movement
   buildIndex: 30
   levelNumber: 31
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Slipped By
+  starLevels: 030000000400000005000000
