@@ -76,7 +76,7 @@ public class ProjectileController : MonoBehaviour
 
     IEnumerator ProjectileHasBeenShot(Collider2D collider, Collider2D shield)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         if (collider != null && this.GetComponent<Collider2D>() != null)
         {
             Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collider, false);

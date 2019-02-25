@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca085967a3b16949b369057ff53ab1c, type: 3}
   m_Name: Level 32
   m_EditorClassIdentifier: 
-  worldName: Movement
+  worldName: Advanced B
   buildIndex: 31
   levelNumber: 32
-  levelName: Tutorial A
-  starLevels: 010000000200000003000000
+  levelName: Splitting Hairs
+  starLevels: 020000000400000005000000

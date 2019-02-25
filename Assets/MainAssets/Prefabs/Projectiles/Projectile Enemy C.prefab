@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1895948790844794520}
   - component: {fileID: 1981117021428098302}
   - component: {fileID: 2979587742501025090}
-  - component: {fileID: 4927865298614294096}
+  - component: {fileID: 1053466381622383233}
   m_Layer: 9
   m_Name: Projectile Enemy C
   m_TagString: Projectile
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 1337434882906930541}
   animator: {fileID: 8353099835888806309}
---- !u!60 &4927865298614294096
-PolygonCollider2D:
+--- !u!58 &1053466381622383233
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,32 +301,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.27, y: 0.325}
-    newSize: {x: 1.11, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.13499999, y: 0.0475}
-      - {x: 0.105, y: 0.1325}
-      - {x: 0.04, y: 0.1625}
-      - {x: -0.055, y: 0.1625}
-      - {x: -0.08, y: 0.1175}
-      - {x: -0.13, y: 0.0625}
-      - {x: -0.13499999, y: 0.0275}
-      - {x: -0.13499999, y: -0.0625}
-      - {x: -0.03, y: -0.0925}
-      - {x: -0.02, y: -0.1575}
-      - {x: -0.01, y: -0.1625}
-      - {x: 0.015, y: -0.1625}
-      - {x: 0.07, y: -0.0625}
-      - {x: 0.13499999, y: -0.0725}
+  m_Offset: {x: 0.0037278722, y: -0.000715851}
+  serializedVersion: 2
+  m_Radius: 0.114447325
 --- !u!1 &8265213034122846459
 GameObject:
   m_ObjectHideFlags: 0
