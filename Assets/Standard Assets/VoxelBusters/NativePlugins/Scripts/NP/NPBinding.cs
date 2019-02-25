@@ -45,10 +45,8 @@ public class NPBinding : SingletonPattern <NPBinding>
 #if USES_NOTIFICATION_SERVICE
 	private 	static		NotificationService 	notificationService; 	
 #endif
-
-#if USES_SHARING
+    
 	private 	static		Sharing 				sharing; 		
-#endif
 
 #if USES_TWITTER
 	private 	static		Twitter 				twitter;
@@ -380,11 +378,9 @@ public class NPBinding : SingletonPattern <NPBinding>
 		if (notificationService == null)
 			notificationService		= CachedGameObject.AddComponentIfNotFound<NotificationService>();
 #endif
-
-#if USES_SHARING
+        
 		if (sharing == null)
 			sharing			= AddComponentBasedOnPlatformOnlyIfRequired<Sharing>();
-#endif
 
 #if USES_TWITTER
 		if (twitter == null)
