@@ -30,7 +30,7 @@ public class PlayerShoot : MonoBehaviour
             newProj.GetComponent<ProjectileController>().IgnoreCollider(transform.parent.GetComponent<Collider2D>(), null);
 
             newProj.GetComponent<Rigidbody2D>().velocity =
-                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projSpeed;
+                (this.GetComponent<LineController>().GetLineStopPosition() - transform.position).normalized * GameController.instance.projSpeed * Random.Range(0.990f, 1.100f);
         }
     }
 

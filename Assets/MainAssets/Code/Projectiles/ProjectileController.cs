@@ -10,7 +10,7 @@ public class ProjectileController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    private Vector3 originalPos;
+    private Vector3 originalPos, vel;
 
     private void Start()
     {
@@ -19,6 +19,7 @@ public class ProjectileController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        vel = this.GetComponent<Rigidbody2D>().velocity;
         transform.up = this.GetComponent<Rigidbody2D>().velocity;
     }
 
@@ -49,12 +50,19 @@ public class ProjectileController : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyController>().Die();
         }
-        else if (collision.gameObject.tag == "Shield")
-        {
-            collision.gameObject.GetComponent<ShieldController>().Damage();
-        }
 
-        if (collision.gameObject.tag != "Mirror")
+        if (collision.gameObject.tag == "Shield")
+        {
+            if (collision.gameObject.GetComponent<ShieldController>().Damage())
+            {
+                Die(true);
+            }
+            else
+            {
+                this.GetComponent<Rigidbody2D>().velocity = vel;
+            }
+        }
+        else if (collision.gameObject.tag != "Mirror")
         {
             Die(true);
         }

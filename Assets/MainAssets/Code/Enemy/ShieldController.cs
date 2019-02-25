@@ -10,7 +10,7 @@ public class ShieldController : MonoBehaviour
     [SerializeField]
     private int health;
     
-    public void Damage()
+    public bool Damage()
     {
         Burst();
         this.GetComponent<PlayAudio>().PlayRandom();
@@ -27,6 +27,7 @@ public class ShieldController : MonoBehaviour
             Destroy(this.gameObject, 1f);
         }
 
+        return (health > -2);
     }
 
     private void Burst()
