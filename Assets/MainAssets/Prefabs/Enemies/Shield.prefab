@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5564381164162178197}
   m_Layer: 11
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   shieldHealth:
   - {fileID: 21300018, guid: 0d3c810a2d2e3e2478ac3be2621a13b3, type: 3}
   - {fileID: 21300010, guid: 0d3c810a2d2e3e2478ac3be2621a13b3, type: 3}
+  - {fileID: 21300000, guid: 0d3c810a2d2e3e2478ac3be2621a13b3, type: 3}
   health: 2
 --- !u!114 &5564381164162178197
 MonoBehaviour:
