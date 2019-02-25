@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VoxelBusters.NativePlugins;
 
 public class UIGameoverController : UIController
 {
@@ -40,7 +42,22 @@ public class UIGameoverController : UIController
 
     public void Tweet()
     {
-        Debug.Log("Tweet");
+        SocialShareSheet _shareSheet = new SocialShareSheet();
+        _shareSheet.Text = "I just got " + PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0) + " stars on level " +
+            GameController.instance.currentLevel.levelNumber + " of HiveMind, can you beat that?";
+
+        _shareSheet.URL = "https://itunes.apple.com/us/app/hivemind-free-space-puzzle/id1109489072?ls=1&mt=8";
+#if UNITY_ANDROID
+        _shareSheet.URL = "https://play.google.com/store/apps/details?id=com.rebeccaansems.hivemind";
+#endif
+        
+        NPBinding.UI.SetPopoverPointAtLastTouchPosition(); // To show popover at last touch point on iOS. On Android, its ignored.
+        NPBinding.Sharing.ShowView(_shareSheet, FinishedSharing);
+    }
+
+    private void FinishedSharing(eShareResult _result)
+    {
+        Debug.Log(_result);
     }
 
     public void GotoNextLevel()
