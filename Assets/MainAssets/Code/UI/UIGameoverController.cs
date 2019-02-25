@@ -57,7 +57,8 @@ public class UIGameoverController : UIController
 
     private void FinishedSharing(eShareResult _result)
     {
-        Debug.Log(_result);
+        Debug.Log("I just got " + PlayerPrefs.GetInt("Stars" + GameController.instance.currentLevel.buildIndex, 0) + " stars on level " +
+            GameController.instance.currentLevel.levelNumber + " of HiveMind, can you beat that?");
     }
 
     public void GotoNextLevel()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VoxelBusters.NativePlugins;
 
 public class UIPauseController : UIController
 {
@@ -58,7 +59,21 @@ public class UIPauseController : UIController
 
     public void Tweet()
     {
-        Debug.Log("Tweet");
+        SocialShareSheet _shareSheet = new SocialShareSheet();
+        _shareSheet.Text = "I've unlocked " + OverallController.instance.maxLevel + " levels on HiveMind, can you beat that?";
+
+        _shareSheet.URL = "https://itunes.apple.com/us/app/hivemind-free-space-puzzle/id1109489072?ls=1&mt=8";
+#if UNITY_ANDROID
+        _shareSheet.URL = "https://play.google.com/store/apps/details?id=com.rebeccaansems.hivemind";
+#endif
+
+        NPBinding.UI.SetPopoverPointAtLastTouchPosition(); // To show popover at last touch point on iOS. On Android, its ignored.
+        NPBinding.Sharing.ShowView(_shareSheet, FinishedSharing);
+    }
+
+    private void FinishedSharing(eShareResult _result)
+    {
+        Debug.Log("I've unlocked " + OverallController.instance.maxLevel + " levels on HiveMind, can you beat that?");
     }
 
     public void GotoLevelSelect()
