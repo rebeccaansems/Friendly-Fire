@@ -26,7 +26,7 @@ public class UITopBannerController : UIController
         {
             shotsText.text = "Shots: " + GameController.instance.shotsFired.ToString("00");
             parText.text = "Shot Par: " + GameController.instance.currentLevel.starLevels[0].ToString("00");
-            levelNameText.text = GameController.instance.currentLevel.levelName;
+            levelNameText.text = "Lvl " + GameController.instance.currentLevel.levelNumber.ToString("00") + ": " + GameController.instance.currentLevel.levelName;
         }
     }
 
