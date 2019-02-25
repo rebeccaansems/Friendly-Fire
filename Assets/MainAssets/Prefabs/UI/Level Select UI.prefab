@@ -15055,7 +15055,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelToLoad
       value: 
-      objectReference: {fileID: 11400000, guid: 1a41369023870a84e8842305b55c6bc8,
+      objectReference: {fileID: 11400000, guid: 30d751a0a8ae9ac4d948ffc8514f224e,
         type: 2}
     - target: {fileID: 7244635883946785613, guid: faa324126ae3e1541a884d5965e6e862,
         type: 3}
@@ -16540,7 +16540,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelToLoad
       value: 
-      objectReference: {fileID: 11400000, guid: 30d751a0a8ae9ac4d948ffc8514f224e,
+      objectReference: {fileID: 11400000, guid: 1a41369023870a84e8842305b55c6bc8,
         type: 2}
     - target: {fileID: 7244635883946785613, guid: faa324126ae3e1541a884d5965e6e862,
         type: 3}
