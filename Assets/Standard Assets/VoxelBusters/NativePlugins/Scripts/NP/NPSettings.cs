@@ -79,6 +79,26 @@ namespace VoxelBusters.NativePlugins
 		private NetworkConnectivitySettings	m_networkConnectivitySettings	= new NetworkConnectivitySettings();
 		[SerializeField]
 		private UtilitySettings				m_utilitySettings				= new UtilitySettings();
+
+		#if !NATIVE_PLUGINS_LITE_VERSION
+		[SerializeField]
+		private BillingSettings				m_billingSettings				= new BillingSettings();
+		[SerializeField]
+		private CloudServicesSettings		m_cloudServicesSettings			= new CloudServicesSettings();
+		[SerializeField]
+		private MediaLibrarySettings		m_mediaLibrarySettings			= new MediaLibrarySettings();
+		[SerializeField]
+		private NotificationServiceSettings	m_notificationSettings			= new NotificationServiceSettings();
+		[SerializeField]
+		private SocialNetworkSettings		m_socialNetworkSettings			= new SocialNetworkSettings();
+		[SerializeField]
+		private GameServicesSettings		m_gameServicesSettings			= new GameServicesSettings();
+		[SerializeField]
+		private WebViewSettings				m_webViewSettings				= new WebViewSettings();
+		[SerializeField]
+		private	AddonServicesSettings		m_addonServicesSettings			= new AddonServicesSettings();
+		#endif
+
 		#endregion
 
 		#region Static Properties
@@ -118,7 +138,97 @@ namespace VoxelBusters.NativePlugins
 				return Instance.m_utilitySettings; 
 			}
 		}
-        
+
+		#if !NATIVE_PLUGINS_LITE_VERSION
+		/// <summary>
+		/// Gets the billing settings.
+		/// </summary>
+		/// <value>The billing settings.</value>
+		public static BillingSettings Billing
+		{
+			get 
+			{ 
+				return Instance.m_billingSettings; 
+			}
+		}
+
+		/// <summary>
+		/// Gets the cloud services settings.
+		/// </summary>
+		/// <value>The cloud services settings.</value>
+		public static CloudServicesSettings CloudServices
+		{
+			get 
+			{ 
+				return Instance.m_cloudServicesSettings; 
+			}
+		}
+
+		/// <summary>
+		/// Gets the media library settings.
+		/// </summary>
+		/// <value>The media library settings.</value>
+		public static MediaLibrarySettings MediaLibrary
+		{
+			get 
+			{ 
+				return Instance.m_mediaLibrarySettings; 
+			}
+		}
+
+		/// <summary>
+		/// Gets the notification settings.
+		/// </summary>
+		/// <value>The notification settings.</value>
+		public static NotificationServiceSettings Notification
+		{
+			get 
+			{ 
+				return Instance.m_notificationSettings; 
+			}
+		}
+
+		/// <summary>
+		/// Gets the twitter settings.
+		/// </summary>
+		/// <value>The twitter settings.</value>
+		public static SocialNetworkSettings SocialNetworkSettings
+		{
+			get 
+			{ 
+				return Instance.m_socialNetworkSettings; 
+			}
+		}
+
+		/// <summary>
+		/// Gets the Game Services settings.
+		/// </summary>
+		/// <value>The Game Services settings.</value>
+		public static GameServicesSettings GameServicesSettings
+		{
+			get 
+			{ 
+				return Instance.m_gameServicesSettings; 
+			}
+		}
+
+		public static AddonServicesSettings AddonServicesSettings
+		{
+			get
+			{
+				return Instance.m_addonServicesSettings; 
+			}
+		}
+
+		public static WebViewSettings WebViewSettings
+		{
+			get 
+			{
+				return Instance.m_webViewSettings;
+			}
+		}
+		#endif
+
 		#endregion
 
 		#region Properties

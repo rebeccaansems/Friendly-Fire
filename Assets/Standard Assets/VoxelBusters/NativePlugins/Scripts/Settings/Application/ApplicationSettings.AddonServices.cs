@@ -11,6 +11,20 @@ namespace VoxelBusters.NativePlugins
 		public class AddonServices
 		{
 			#region Fields
+
+#if !NATIVE_PLUGINS_LITE_VERSION
+			[SerializeField]
+			[NotifyNPSettingsOnValueChange]
+			[Tooltip("If enabled, Soomla Grow service will be active within your application.")]
+			private		bool	m_usesSoomlaGrow 	= false;
+#endif	
+
+#if !NATIVE_PLUGINS_LITE_VERSION
+			[SerializeField]
+			[NotifyNPSettingsOnValueChange]
+			[Tooltip("If enabled, One Signal service will be active within your application.")]
+			private		bool	m_usesOneSignal 	= false;
+#endif	
 			#endregion
 			
 			#region Properties
@@ -19,7 +33,11 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
+#if !NATIVE_PLUGINS_LITE_VERSION
+					return m_usesSoomlaGrow;
+#else
 					return false;
+#endif
 				}
 			}
 			
@@ -27,7 +45,11 @@ namespace VoxelBusters.NativePlugins
 			{
 				get
 				{
+#if !NATIVE_PLUGINS_LITE_VERSION
+					return m_usesOneSignal;
+#else
 					return false;
+#endif
 				}
 			}
 			

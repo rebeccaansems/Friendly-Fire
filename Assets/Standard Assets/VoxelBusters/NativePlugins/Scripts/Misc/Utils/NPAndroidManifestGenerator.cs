@@ -39,6 +39,68 @@ namespace VoxelBusters.NativePlugins
 
 		private void WriteActivityInfo (XmlWriter _xmlWriter)
 		{
+			#if !NATIVE_PLUGINS_LITE_VERSION
+			// Billing
+			if (m_supportedFeatures.UsesBilling)
+			{
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.billing.serviceprovider.google.GoogleBillingActivity",
+						      _theme:			"@style/FloatingActivityTheme",
+				              _comment:			"Billing : Activity used for purchase view");
+
+			}
+
+			// Media
+			if (m_supportedFeatures.UsesMediaLibrary)
+			{
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.medialibrary.MediaLibraryActivity",
+				              _theme:			"@style/FloatingActivityTheme",
+				              _orientation:		"sensor",
+				              _configChanges:	"keyboardHidden|orientation|screenSize",
+				              _comment:			"MediaLibrary : Generic helper activity");
+
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.medialibrary.GalleryVideoLauncherActivity",
+				              _theme:			"@style/FloatingActivityTheme",
+				              _orientation:		"sensor",
+				              _comment:			"MediaLibrary : Used for Launching video from gallery");
+
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.medialibrary.YoutubePlayerActivity",
+				              _comment:			"MediaLibrary : Youtube player activity");
+			}
+
+			// Notifications
+			if (m_supportedFeatures.UsesNotificationService)
+			{
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.notification.core.ApplicationLauncherFromNotification",
+				              _theme:			"@style/FloatingActivityTheme",
+				              _exported:		"true",
+				              _comment:			"Application Launcher - Notifications : Used as a proxy to capture triggered notification.");
+			}
+
+
+			// Twitter
+			if (m_supportedFeatures.UsesTwitter)
+			{
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.socialnetwork.twitter.TwitterHelperActivity",
+				              _theme:			"@style/FloatingActivityTheme",
+				              _comment:			"SocialNetworking - Twitter : Generic helper activity");
+			}
+
+			if (m_supportedFeatures.UsesGameServices)
+			{
+				WriteActivity(_xmlWriter:		_xmlWriter,
+				              _name:			"com.voxelbusters.nativeplugins.features.gameservices.serviceprovider.google.GooglePlayGameUIActivity",
+				              _theme:			"@style/FloatingActivityTheme",
+				              _comment:			"Game Play Services helper activity");
+			}
+
+			#endif
+
 			// Sharing
 			if (m_supportedFeatures.UsesSharing)
 			{
@@ -103,12 +165,52 @@ namespace VoxelBusters.NativePlugins
 
 		private void WriteReceiverInfo (XmlWriter _xmlWriter)
 		{
-			
+			#if !NATIVE_PLUGINS_LITE_VERSION
+
+			if (m_supportedFeatures.UsesBilling)
+			{
+				_xmlWriter.WriteComment("Billing : Amazon Billing Receiver");
+				_xmlWriter.WriteStartElement("receiver");
+				{
+					WriteAttributeString(_xmlWriter, "android", "name", null, "com.amazon.device.iap.ResponseReceiver");
+
+					_xmlWriter.WriteStartElement("intent-filter");
+					{
+						WriteAction(_xmlWriter:		_xmlWriter,
+						            _name:			"com.amazon.inapp.purchasing.NOTIFY",
+						            _permission:	"com.amazon.inapp.purchasing.Permission.NOTIFY"
+									);
+					}
+					_xmlWriter.WriteEndElement();
+				}
+				_xmlWriter.WriteEndElement();
+			}
+
+			// Local notification receiver
+			if (m_supportedFeatures.UsesNotificationService)
+			{
+				_xmlWriter.WriteComment("Notifications : Receiver for alarm to help Local Notifications");
+				_xmlWriter.WriteStartElement("receiver");
+				{
+					WriteAttributeString(_xmlWriter, "android", "name", null, "com.voxelbusters.nativeplugins.features.notification.core.AlarmEventReceiver");
+				}
+				_xmlWriter.WriteEndElement();
+			}
+			#endif
 		}
 
 		private void WriteServiceInfo (XmlWriter _xmlWriter)
 		{
-			
+			#if !NATIVE_PLUGINS_LITE_VERSION
+			if (m_supportedFeatures.UsesNotificationService)
+			{
+                WriteService(_xmlWriter: _xmlWriter,
+                    _name: "com.voxelbusters.nativeplugins.features.notification.serviceprovider.fcm.FCMMessagingService",
+                    _permission: null,
+                    _intentFilterAction:"com.google.firebase.MESSAGING_EVENT",
+                    _comment: "Notifications : Firebase Cloud Messaging Service");
+			}
+			#endif
 		}
 
         private void WriteMetaInfo(XmlWriter _xmlWriter)
@@ -161,6 +263,73 @@ namespace VoxelBusters.NativePlugins
 			}
 
 
+#if !NATIVE_PLUGINS_LITE_VERSION
+			if (m_supportedFeatures.UsesBilling)
+			{
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				                    _name: 		"com.android.vending.BILLING",
+				                    _comment: 	"Billing");
+			}
+
+			if (m_supportedFeatures.UsesMediaLibrary)
+			{
+				if (m_supportedFeatures.MediaLibrary.usesCamera)
+				{
+					WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				    	                _name: 		"android.permission.CAMERA",
+				        	            _features:	new Feature[] {
+													new Feature("android.hardware.camera", false),
+													new Feature("android.hardware.camera.autofocus", false)},
+				                    _comment:	"Media Library");
+				}
+
+				if (m_supportedFeatures.MediaLibrary.usesPhotoAlbum)
+				{
+					WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				                    _name: 		"com.google.android.apps.photos.permission.GOOGLE_PHOTOS");
+
+
+					WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				                    _name: 		"android.permission.MANAGE_DOCUMENTS");
+				}
+			}
+
+			if (m_supportedFeatures.UsesNotificationService)
+			{
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+					_name: 		"android.permission.WAKE_LOCK");
+
+#if USES_NOTIFICATION_SERVICE
+				if(NPSettings.Notification.Android.AllowVibration)
+				{
+					WriteUsesPermission(_xmlWriter:	_xmlWriter,
+					                    _name: 		"android.permission.VIBRATE",
+					                    _comment: 	"Notifications : If vibration is required for notification");
+				}
+#endif
+			}
+
+			if(m_supportedFeatures.UsesGameServices)
+			{
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+					                _name: 		"com.google.android.providers.gsf.permission.READ_GSERVICES",
+					                _comment: 	"GameServices : For getting content provider access.");
+
+			}
+
+			if(m_supportedFeatures.UsesWebView)
+			{
+				// Used for file uploads
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+					_name: 		"android.permission.CAMERA",
+					_features:	new Feature[] {
+						new Feature("android.hardware.camera", false),
+						new Feature("android.hardware.camera.autofocus", false)},
+					_comment:	"Webview - Uses for file uploading from camera");
+
+			}
+
+#endif
 
 			//Write common permissions here
 
@@ -174,6 +343,19 @@ namespace VoxelBusters.NativePlugins
 			WriteUsesPermission(_xmlWriter:	_xmlWriter,
 			                    _name: 		"android.permission.INTERNET",
 			                    _comment:	"Required for internet access");
+
+			#if !NATIVE_PLUGINS_LITE_VERSION
+			//Storage Access
+			if(m_supportedFeatures.UsesMediaLibrary)
+			{
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				                    _name: 		"android.permission.WRITE_EXTERNAL_STORAGE",
+				                    _comment:	"For Saving to external directory - Save to Gallery Feature in MediaLibrary");
+
+				WriteUsesPermission(_xmlWriter:	_xmlWriter,
+				                    _name: 		"android.permission.READ_EXTERNAL_STORAGE");
+			}
+			#endif
 
 		}
 
