@@ -90,10 +90,11 @@ public class UIPauseController : UIController
 
     private void LoadSettings()
     {
-        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 50);
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+        senseSlider.value = OverallController.instance.rotSpeed;
+        volumeSlider.value = OverallController.instance.musicVolume;
+        sfxSlider.value = OverallController.instance.sfxVolume;
 
-        invertToggle.isOn = PlayerPrefs.GetInt("InvertControls", 1) == -1;
+        invertToggle.isOn = OverallController.instance.invertControls == -1;
     }
 
     private void SaveSettings()
