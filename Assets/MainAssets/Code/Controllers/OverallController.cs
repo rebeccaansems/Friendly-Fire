@@ -15,7 +15,7 @@ public class OverallController : MonoBehaviour
     public int invertControls, currentLevel, currentLevelSelectScreen, levelsPlayedSession, maxLevel = 36;
 
     [HideInInspector]
-    public float volume, rotSpeed;
+    public float musicVolume, sfxVolume, rotSpeed;
 
     private float timeOfLastAd;
 
@@ -38,7 +38,8 @@ public class OverallController : MonoBehaviour
 
     void Start()
     {
-        volume = PlayerPrefs.GetFloat("Volume", 0.5f);
+        sfxVolume = PlayerPrefs.GetFloat("VolumeSFX", 0.5f);
+        musicVolume = PlayerPrefs.GetFloat("Volume", 0.5f);
         rotSpeed = PlayerPrefs.GetFloat("RotSpeed", 25);
         invertControls = PlayerPrefs.GetInt("InvertControls", 1);
     }

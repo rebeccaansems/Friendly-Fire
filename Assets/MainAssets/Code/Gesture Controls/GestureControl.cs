@@ -89,7 +89,7 @@ public class GestureControl : MonoBehaviour
 
     private void PlayAudio(bool play)
     {
-        this.GetComponent<AudioSource>().volume = OverallController.instance.volume;
+        this.GetComponent<AudioSource>().volume = OverallController.instance.sfxVolume;
 
         if (this.GetComponent<AudioSource>().isPlaying == true && play == false)
         {

@@ -10,7 +10,7 @@ public class UIPauseController : UIController
     private CanvasGroup[] contentPanels;
 
     [SerializeField]
-    private Slider senseSlider, volumeSlider;
+    private Slider senseSlider, volumeSlider, sfxSlider;
 
     [SerializeField]
     private Toggle invertToggle;
@@ -54,7 +54,13 @@ public class UIPauseController : UIController
     public void VolumeChanged()
     {
         PlayerPrefs.SetFloat("Volume", volumeSlider.value);
-        OverallController.instance.volume = volumeSlider.value;
+        OverallController.instance.musicVolume = volumeSlider.value;
+    }
+
+    public void SfxVolumeChanged()
+    {
+        PlayerPrefs.SetFloat("VolumeSFX", sfxSlider.value);
+        OverallController.instance.sfxVolume = sfxSlider.value;
     }
 
     public void Tweet()

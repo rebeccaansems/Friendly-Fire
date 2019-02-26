@@ -12,7 +12,7 @@ public class PlayAudio : MonoBehaviour
         audio.name = AudioClips[num].name;
         audio.GetComponent<AudioSource>().playOnAwake = false;
         audio.GetComponent<AudioSource>().loop = false;
-        audio.GetComponent<AudioSource>().volume = OverallController.instance.volume;
+        audio.GetComponent<AudioSource>().volume = OverallController.instance.sfxVolume;
 
         audio.GetComponent<AudioSource>().PlayOneShot(AudioClips[num]);
 

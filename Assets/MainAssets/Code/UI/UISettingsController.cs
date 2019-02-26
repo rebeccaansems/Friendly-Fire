@@ -10,7 +10,7 @@ public class UISettingsController : UIController
     private CanvasGroup[] contentPanels;
 
     [SerializeField]
-    private Slider senseSlider, volumeSlider;
+    private Slider senseSlider, volumeSlider, sfxSlider;
 
     [SerializeField]
     private Toggle invertToggle;
@@ -43,13 +43,20 @@ public class UISettingsController : UIController
     public void VolumeChanged()
     {
         PlayerPrefs.SetFloat("Volume", volumeSlider.value);
-        OverallController.instance.volume = volumeSlider.value;
+        OverallController.instance.musicVolume = volumeSlider.value;
+    }
+
+    public void SfxVolumeChanged()
+    {
+        PlayerPrefs.SetFloat("VolumeSFX", sfxSlider.value);
+        OverallController.instance.sfxVolume = sfxSlider.value;
     }
 
     private void LoadSettings()
     {
-        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 50);
+        senseSlider.value = PlayerPrefs.GetFloat("RotSpeed", 25);
         volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+        sfxSlider.value = PlayerPrefs.GetFloat("VolumeSFX", 0.5f);
 
         invertToggle.isOn = PlayerPrefs.GetInt("InvertControls", 1) == -1;
     }

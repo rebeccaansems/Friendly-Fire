@@ -6,9 +6,9 @@ public class ExternalAudio : MonoBehaviour
 {
     void Update()
     {
-        if (this.GetComponent<AudioSource>().volume != OverallController.instance.volume)
+        if (this.GetComponent<AudioSource>().volume != OverallController.instance.sfxVolume)
         {
-            this.GetComponent<AudioSource>().volume = OverallController.instance.volume;
+            this.GetComponent<AudioSource>().volume = OverallController.instance.sfxVolume;
         }
     }
 }

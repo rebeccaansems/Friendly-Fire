@@ -893,19 +893,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710931914, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752650043, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 790321332, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_AnchorMax.x
@@ -933,11 +953,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855425421, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1505239500, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_AnchorMax.x
@@ -965,18 +997,89 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743633569, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1051545128, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 62813149, guid: 69c00a27479113b4683683928504b756, type: 3}
+    - target: {fileID: 472842853, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.500122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851617085, guid: 69c00a27479113b4683683928504b756, type: 3}
       propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505446362981362580, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505446362981362580, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505446362981362580, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505446362981362580, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 124.12516
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776756060873147873, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776756060873147873, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776756060873147873, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776756060873147873, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776756060873147873, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876079813471040807, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876079813471040807, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

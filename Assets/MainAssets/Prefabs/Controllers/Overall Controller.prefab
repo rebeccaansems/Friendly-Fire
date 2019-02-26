@@ -87,8 +87,11 @@ MonoBehaviour:
   tutorialBuildIndex: 2
   invertControls: 0
   currentLevel: 0
+  currentLevelSelectScreen: 0
   levelsPlayedSession: 0
-  volume: 0
+  maxLevel: 36
+  musicVolume: 0
+  sfxVolume: 0
   rotSpeed: 0
 --- !u!82 &8609347004556557656
 AudioSource:
@@ -199,6 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MusicClips:
-  - {fileID: 8300000, guid: b152a9c8ef3ea3c47a2f8542d83c4087, type: 3}
-  - {fileID: 8300000, guid: cf84928cf807abb4c948fbabec9cfb17, type: 3}
-  - {fileID: 8300000, guid: eae0c7172eee34e4eb1bb320eeff9170, type: 3}
+  - {fileID: 8300000, guid: 7693ef8f125505a4a9ef1a3fc0d75c77, type: 3}
+  - {fileID: 8300000, guid: b8d07c23ded79e847937ba74506e45c4, type: 3}
+  - {fileID: 8300000, guid: f68c2443489c6034cbcc773c8ac98689, type: 3}
