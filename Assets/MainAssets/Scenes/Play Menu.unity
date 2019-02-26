@@ -1044,6 +1044,33 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4587591013937567628, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_text
+      value: "<size=80%>Creator\r\n<size=60%>Rebecca Ansems\r\n<size=35%>http://www.rebeccaansems.com\r\n\r\n<size=80%>Art\r\n<size=60%>Icons\r\n<size=35%>Font
+        Awesome - Dave Gandy\r\n\r\n<size=60%>Font\r\n<size=50%>Nasalization\n<size=35%>Typodermic
+        Fonts"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587591013937567628, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587591013937567628, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587591013937567628, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587591013937567628, guid: 69c00a27479113b4683683928504b756,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5758572611876571624, guid: 69c00a27479113b4683683928504b756,
         type: 3}
       propertyPath: m_havePropertiesChanged
