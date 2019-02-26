@@ -975,6 +975,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 62813149, guid: 69c00a27479113b4683683928504b756, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c00a27479113b4683683928504b756, type: 3}
 --- !u!1001 &4073597419483017554

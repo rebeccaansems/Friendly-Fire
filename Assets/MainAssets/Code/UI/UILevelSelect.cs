@@ -33,6 +33,7 @@ public class UILevelSelect : UIController
 
     private void Start()
     {
+        currentWorld = OverallController.instance.currentLevelSelectScreen;
         Show();
     }
 
@@ -64,7 +65,7 @@ public class UILevelSelect : UIController
             currentWorld = contentPanels.Length - 1;
         }
 
-        foreach(Image image in dotImages)
+        foreach (Image image in dotImages)
         {
             image.sprite = emptyDotImage;
         }

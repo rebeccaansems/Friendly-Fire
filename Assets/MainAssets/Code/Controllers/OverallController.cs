@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
 
 public class OverallController : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class OverallController : MonoBehaviour
     public int buildIndexVariance, levelSelectBuildIndex, tutorialBuildIndex;
 
     [HideInInspector]
-    public int invertControls, currentLevel, levelsPlayedSession, maxLevel = 36;
+    public int invertControls, currentLevel, currentLevelSelectScreen, levelsPlayedSession, maxLevel = 36;
 
     [HideInInspector]
     public float volume, rotSpeed;
 
     private float timeOfLastAd;
+
+    private bool levelChanged = false;
 
     public static OverallController instance;
 
@@ -49,5 +52,10 @@ public class OverallController : MonoBehaviour
             levelsPlayedSession = 0;
             Advertisement.Show();
         }
+    }
+
+    private void Update()
+    {
+        currentLevelSelectScreen = (int)(currentLevel / 6);
     }
 }
