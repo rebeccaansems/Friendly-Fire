@@ -1,7 +1,18 @@
-Music
-Crater, DogDaze, Parachute
-JCM [Canada] - https://soundcloud.com/j_c_m/parachute-electronic-chill-synth
+<size=80%>Creator
+<size=60%>Rebecca Ansems
+<size=35%>http://www.rebeccaansems.com
 
-Font
-Nasalization
-Typodermic Fonts
+<size=80%>Audio
+<size=60%>Music
+<size=50%>Crater, DogDaze, Parachute - JCM [Canada]
+<size=35%>https://soundcloud.com/j_c_m/parachute-electronic-chill-synth
+
+<size=60%>Sound Effects
+<size=50%>Zapsplat
+
+<size=80%>Art
+<size=60%>Icons
+<size=35%>Font Awesome - Dave Gandy
+
+<size=60%>Font
+<size=50%>Nasalization - Typodermic Fonts
