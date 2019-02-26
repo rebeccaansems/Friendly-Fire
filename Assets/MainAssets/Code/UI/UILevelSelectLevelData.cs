@@ -30,6 +30,10 @@ public class UILevelSelectLevelData : MonoBehaviour
         {
             LockLevel();
         }
+        else if (PlayerPrefs.GetInt("Stars" + (levelToLoad.buildIndex - 1), 0) != 0 && PlayerPrefs.GetInt("Stars" + (levelToLoad.buildIndex), 0) == 0)
+        {
+            this.GetComponent<Animator>().SetBool("isLatest", true);
+        }
     }
 
     private void LockLevel()

@@ -23,6 +23,7 @@ public class UISettingsController : UIController
     private void Awake()
     {
         instance = this;
+        Time.timeScale = 1;
     }
 
     public void Hide()

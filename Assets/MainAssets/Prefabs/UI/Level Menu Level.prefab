@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 196828440228692783}
   - component: {fileID: 7244635883946785613}
   - component: {fileID: 7236769774813519422}
+  - component: {fileID: 538410376635245297}
   m_Layer: 5
   m_Name: Level Menu Level
   m_TagString: Untagged
@@ -565,6 +566,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioClips:
   - {fileID: 8300000, guid: 1c01fee4e2760e84dbc4bca039c80282, type: 3}
+--- !u!95 &538410376635245297
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196828440228692785}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 844b865f29bd75449bb6616723cbc3fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &196828440252197198
 GameObject:
   m_ObjectHideFlags: 0
